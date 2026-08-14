@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>POLL | The blueprint of accurate insights</title>
+<title>POLL | The Blueprint of Accurate Insights</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -25,9 +26,9 @@ body {
     color: #071a45;
 }
 
-/* =========================
+/* =========================================
    NAVIGATION
-========================= */
+========================================= */
 
 nav {
     height: 90px;
@@ -40,7 +41,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 }
 
 .logo {
@@ -48,8 +49,9 @@ nav {
     align-items: center;
     gap: 12px;
     font-size: 32px;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 2px;
+    color: #081c4d;
 }
 
 .logo-icon {
@@ -62,7 +64,7 @@ nav {
 .logo-icon span {
     width: 7px;
     background: linear-gradient(180deg, #176cff, #173dce);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .logo-icon span:nth-child(1) {
@@ -80,14 +82,14 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 32px;
+    gap: 30px;
 }
 
 nav a {
     text-decoration: none;
     color: #071a45;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 800;
     transition: 0.3s;
 }
 
@@ -95,20 +97,29 @@ nav a:hover {
     color: #176cff;
 }
 
-/* =========================
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero {
-    min-height: 620px;
+    min-height: 650px;
     display: flex;
     align-items: center;
-    padding: 70px 6%;
+    padding: 80px 6%;
     position: relative;
     overflow: hidden;
+
     background:
-        radial-gradient(circle at 80% 30%, rgba(42,111,255,0.12), transparent 30%),
-        linear-gradient(135deg, #ffffff 0%, #f7faff 100%);
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(42,111,255,0.14),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f6f9ff 100%
+        );
 }
 
 .hero-content {
@@ -117,22 +128,23 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: clamp(70px, 9vw, 125px);
-    line-height: 0.9;
-    letter-spacing: -5px;
-    margin-bottom: 25px;
+    font-size: clamp(75px, 10vw, 135px);
+    line-height: 0.85;
+    letter-spacing: -6px;
+    margin-bottom: 30px;
     color: #081c4d;
 }
 
 .tagline {
     color: #1763ef;
-    font-size: clamp(22px, 3vw, 34px);
+    font-size: clamp(22px, 3vw, 35px);
     font-weight: 500;
     margin-bottom: 25px;
+    line-height: 1.25;
 }
 
 .hero-description {
-    max-width: 600px;
+    max-width: 620px;
     font-size: 18px;
     line-height: 1.8;
     color: #53617a;
@@ -140,37 +152,45 @@ nav a:hover {
 }
 
 .crunch-hero {
-    font-size: 18px;
-    font-weight: 800;
     color: #081c4d;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 1px;
     margin-bottom: 35px;
-    letter-spacing: 0.5px;
 }
 
 .button {
     display: inline-block;
-    padding: 17px 28px;
-    background: linear-gradient(135deg, #102b70, #176cff);
+    padding: 17px 30px;
+    background: linear-gradient(
+        135deg,
+        #102b70,
+        #176cff
+    );
     color: white;
     text-decoration: none;
     border-radius: 15px;
-    font-weight: 700;
-    box-shadow: 0 15px 35px rgba(23,108,255,0.22);
+    font-weight: 800;
+    box-shadow:
+        0 15px 35px
+        rgba(23,108,255,0.22);
     transition: 0.3s;
 }
 
 .button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(23,108,255,0.32);
+    box-shadow:
+        0 20px 45px
+        rgba(23,108,255,0.32);
 }
 
-/* =========================
+/* =========================================
    HERO GRAPH
-========================= */
+========================================= */
 
 .graph-area {
     width: 50%;
-    height: 430px;
+    height: 440px;
     position: relative;
     display: flex;
     align-items: center;
@@ -183,6 +203,7 @@ nav a:hover {
     position: relative;
     border-left: 2px solid #dbe5f5;
     border-bottom: 2px solid #dbe5f5;
+
     background:
         repeating-linear-gradient(
             to top,
@@ -206,8 +227,18 @@ nav a:hover {
 .bar {
     width: 12%;
     border-radius: 8px 8px 0 0;
-    background: linear-gradient(to top, #1262dc, #5bb7ff);
-    box-shadow: 0 15px 25px rgba(27,104,220,0.18);
+
+    background:
+        linear-gradient(
+            to top,
+            #1262dc,
+            #5bb7ff
+        );
+
+    box-shadow:
+        0 15px 25px
+        rgba(27,104,220,0.18);
+
     animation: rise 1.2s ease-out;
 }
 
@@ -220,7 +251,11 @@ nav a:hover {
 .bar:nth-child(7) { height: 85%; }
 
 @keyframes rise {
-    from { height: 0; }
+
+    from {
+        height: 0;
+    }
+
 }
 
 .line {
@@ -235,7 +270,6 @@ nav a:hover {
 .line svg {
     width: 100%;
     height: 100%;
-    overflow: visible;
 }
 
 .line path {
@@ -260,7 +294,11 @@ nav a:hover {
     background: rgba(239,246,255,0.95);
     border: 1px solid #dce8fb;
     border-radius: 18px;
-    box-shadow: 0 20px 50px rgba(17,64,130,0.12);
+
+    box-shadow:
+        0 20px 50px
+        rgba(17,64,130,0.12);
+
     z-index: 2;
 }
 
@@ -275,15 +313,25 @@ nav a:hover {
     color: #176cff;
 }
 
-/* =========================
+/* =========================================
    ABOUT
-========================= */
+========================================= */
 
 .about {
-    padding: 100px 6%;
+    padding: 110px 6%;
+
     background:
-        radial-gradient(circle at 80% 20%, rgba(38,102,255,0.15), transparent 30%),
-        linear-gradient(135deg, #061637, #0b2454);
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(38,102,255,0.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #061637,
+            #0b2454
+        );
+
     color: white;
 }
 
@@ -296,15 +344,15 @@ nav a:hover {
 
 .section-label {
     color: #2e76ff;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
 .about h2 {
-    font-size: 50px;
-    line-height: 1.05;
+    font-size: 55px;
+    line-height: 1.02;
     margin-bottom: 25px;
 }
 
@@ -325,35 +373,40 @@ nav a:hover {
 .crunch-line span {
     display: block;
     color: #79b4ff;
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 13px;
+    font-weight: 900;
     letter-spacing: 2px;
     margin-bottom: 8px;
 }
 
 .crunch-line strong {
     font-size: 22px;
-    color: white;
+    line-height: 1.4;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
 .card {
     padding: 35px 25px;
     min-height: 270px;
+
     border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.05);
+
+    background:
+        rgba(255,255,255,0.05);
+
     border-radius: 20px;
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    background: rgba(255,255,255,0.08);
+    background:
+        rgba(255,255,255,0.08);
 }
 
 .card-icon {
@@ -371,14 +424,93 @@ nav a:hover {
     line-height: 1.6;
 }
 
-/* =========================
+/* =========================================
+   GENRES
+========================================= */
+
+.genres {
+    padding: 110px 6%;
+    background: #ffffff;
+}
+
+.genres h2 {
+    font-size: 50px;
+    color: #081c4d;
+    margin-bottom: 15px;
+}
+
+.genres-description {
+    max-width: 700px;
+    color: #65728a;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(5,1fr);
+    gap: 18px;
+}
+
+.genre-card {
+    min-height: 190px;
+    padding: 28px 20px;
+
+    border: 1px solid #e2e9f4;
+    border-radius: 20px;
+
+    background: white;
+
+    text-decoration: none;
+    color: #081c4d;
+
+    box-shadow:
+        0 15px 40px
+        rgba(20,50,100,0.06);
+
+    transition: 0.3s;
+}
+
+.genre-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #176cff;
+
+    box-shadow:
+        0 20px 50px
+        rgba(23,108,255,0.14);
+}
+
+.genre-icon {
+    font-size: 42px;
+    margin-bottom: 22px;
+}
+
+.genre-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.genre-card p {
+    color: #7a879b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================================
    INSIGHTS
-========================= */
+========================================= */
 
 .insights {
-    padding: 100px 6%;
+    padding: 110px 6%;
+
     background:
-        radial-gradient(circle at 90% 10%, rgba(40,110,255,0.08), transparent 25%),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(40,110,255,0.08),
+            transparent 25%
+        ),
         #f7faff;
 }
 
@@ -392,7 +524,7 @@ nav a:hover {
     color: #65728a;
     font-size: 17px;
     line-height: 1.7;
-    max-width: 700px;
+    max-width: 750px;
     margin-bottom: 50px;
 }
 
@@ -407,7 +539,11 @@ nav a:hover {
     border: 1px solid #e1e8f3;
     border-radius: 25px;
     padding: 35px;
-    box-shadow: 0 20px 50px rgba(20, 50, 100, 0.08);
+
+    box-shadow:
+        0 20px 50px
+        rgba(20,50,100,0.08);
+
     text-align: center;
 }
 
@@ -447,14 +583,91 @@ nav a:hover {
     font-size: 13px;
 }
 
-/* =========================
+/* =========================================
+   DATA TABLE
+========================================= */
+
+.data-section {
+    padding: 100px 6%;
+    background: white;
+}
+
+.data-section h2 {
+    font-size: 45px;
+    color: #081c4d;
+    margin-bottom: 15px;
+}
+
+.data-description {
+    color: #68768c;
+    margin-bottom: 40px;
+}
+
+.table-container {
+    overflow-x: auto;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(20,50,100,0.07);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background: #081c4d;
+    color: white;
+}
+
+th,
+td {
+    padding: 17px 20px;
+    text-align: left;
+    border-bottom: 1px solid #edf1f7;
+}
+
+th {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+td {
+    color: #4e5d75;
+}
+
+.data-link {
+    color: #176cff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.data-link:hover {
+    text-decoration: underline;
+}
+
+.vote-number {
+    font-weight: 900;
+    color: #081c4d;
+}
+
+/* =========================================
    LEADERSHIP
-========================= */
+========================================= */
 
 .leadership {
-    padding: 100px 6%;
+    padding: 110px 6%;
+
     background:
-        radial-gradient(circle at 90% 80%, rgba(33,106,255,0.1), transparent 30%),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(33,106,255,0.1),
+            transparent 30%
+        ),
         #ffffff;
 }
 
@@ -466,7 +679,8 @@ nav a:hover {
 
 .leaders {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3,1fr);
     gap: 28px;
 }
 
@@ -475,15 +689,25 @@ nav a:hover {
     border: 1px solid #e3eaf5;
     border-radius: 22px;
     padding: 40px;
+
     text-align: center;
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 20px 50px rgba(22,55,100,0.07);
+
+    background:
+        rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 20px 50px
+        rgba(22,55,100,0.07);
+
     transition: 0.3s;
 }
 
 .leader:hover {
     transform: translateY(-7px);
-    box-shadow: 0 25px 60px rgba(22,55,100,0.12);
+
+    box-shadow:
+        0 25px 60px
+        rgba(22,55,100,0.12);
 }
 
 .profile {
@@ -491,28 +715,47 @@ nav a:hover {
     height: 130px;
     margin: 0 auto 30px;
     border-radius: 50%;
-    background: linear-gradient(145deg, #edf2f8, #d9e0eb);
+
+    background:
+        linear-gradient(
+            145deg,
+            #edf2f8,
+            #d9e0eb
+        );
+
     position: relative;
 }
 
 .profile::before {
     content: "";
+
     position: absolute;
+
     width: 43px;
     height: 43px;
+
     border-radius: 50%;
+
     background: #aeb8c9;
+
     top: 23px;
     left: 44px;
 }
 
 .profile::after {
     content: "";
+
     position: absolute;
+
     width: 75px;
     height: 42px;
-    border-radius: 50px 50px 20px 20px;
+
+    border-radius:
+        50px 50px
+        20px 20px;
+
     background: #aeb8c9;
+
     bottom: 18px;
     left: 28px;
 }
@@ -528,25 +771,38 @@ nav a:hover {
     letter-spacing: 4px;
 }
 
-/* =========================
+/* =========================================
    CONTACT
-========================= */
+========================================= */
 
 .contact {
     padding: 30px 6% 80px;
 }
 
 .contact-box {
-    min-height: 180px;
+    min-height: 190px;
     padding: 35px 50px;
+
     border-radius: 24px;
-    background: linear-gradient(135deg, #09215a, #123a94);
+
+    background:
+        linear-gradient(
+            135deg,
+            #09215a,
+            #123a94
+        );
+
     color: white;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 30px;
-    box-shadow: 0 25px 60px rgba(10,50,120,0.2);
+
+    box-shadow:
+        0 25px 60px
+        rgba(10,50,120,0.2);
 }
 
 .contact-box h2 {
@@ -559,6 +815,7 @@ nav a:hover {
     text-decoration: none;
     display: block;
     margin-top: 12px;
+    font-weight: 700;
 }
 
 .contact-email:hover {
@@ -567,12 +824,19 @@ nav a:hover {
 
 .contact-button {
     padding: 16px 27px;
+
     background: #176cff;
+
     border-radius: 12px;
+
     color: white;
+
     text-decoration: none;
+
     font-weight: bold;
+
     white-space: nowrap;
+
     transition: 0.3s;
 }
 
@@ -581,25 +845,40 @@ nav a:hover {
     background: #3280ff;
 }
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer {
     padding: 35px 6%;
+
     background: #061431;
+
     color: #91a3c3;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     font-size: 14px;
 }
 
-/* =========================
+/* =========================================
    RESPONSIVE
-========================= */
+========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+
+    .genre-grid {
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+}
+
+@media (max-width: 950px) {
 
     nav ul {
         gap: 15px;
@@ -615,7 +894,7 @@ footer {
     }
 
     .graph-area {
-        margin-top: 50px;
+        margin-top: 60px;
     }
 
     .about-grid {
@@ -633,6 +912,7 @@ footer {
     .leaders {
         grid-template-columns: 1fr;
     }
+
 }
 
 @media (max-width: 650px) {
@@ -650,7 +930,7 @@ footer {
     }
 
     .hero {
-        padding: 50px 6%;
+        padding: 55px 6%;
     }
 
     .hero h1 {
@@ -670,15 +950,23 @@ footer {
     }
 
     .about,
+    .genres,
     .insights,
+    .data-section,
     .leadership {
         padding: 70px 6%;
     }
 
     .about h2,
+    .genres h2,
     .insights h2,
+    .data-section h2,
     .leadership h2 {
         font-size: 38px;
+    }
+
+    .genre-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     .chart-card {
@@ -700,66 +988,119 @@ footer {
         gap: 10px;
         text-align: center;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
+
+<!-- =========================================
      NAVIGATION
-========================= -->
+========================================= -->
 
 <nav>
 
     <div class="logo">
 
         <div class="logo-icon">
+
             <span></span>
             <span></span>
             <span></span>
+
         </div>
 
         POLL
 
     </div>
 
+
     <ul>
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#about">ABOUT US</a></li>
-        <li><a href="#insights">INSIGHTS</a></li>
-        <li><a href="#leadership">LEADERSHIP</a></li>
-        <li><a href="mailto:apkyoda@gmail.com">CONTACT</a></li>
+
+        <li>
+            <a href="#home">
+                HOME
+            </a>
+        </li>
+
+        <li>
+            <a href="#about">
+                ABOUT
+            </a>
+        </li>
+
+        <li>
+            <a href="#genres">
+                GENRES
+            </a>
+        </li>
+
+        <li>
+            <a href="#insights">
+                INSIGHTS
+            </a>
+        </li>
+
+        <li>
+            <a href="#leadership">
+                LEADERSHIP
+            </a>
+        </li>
+
+        <li>
+            <a href="mailto:apkyoda@gmail.com">
+                CONTACT
+            </a>
+        </li>
+
     </ul>
 
 </nav>
 
 
-<!-- =========================
+<!-- =========================================
      HERO
-========================= -->
+========================================= -->
 
 <section class="hero" id="home">
 
     <div class="hero-content">
 
-        <h1>POLL</h1>
+        <h1>
+            POLL
+        </h1>
 
         <div class="tagline">
             The blueprint of accurate insights
         </div>
 
         <p class="hero-description">
-            We turn data into clarity. Helping businesses and
-            organizations understand what the numbers are saying
-            and make smarter decisions.
+
+            We turn data into clarity.
+
+            POLL transforms numbers,
+            opinions and responses into
+            meaningful insights that help
+            people understand what the
+            numbers are really saying.
+
         </p>
 
         <div class="crunch-hero">
-            WE CRUNCH THE NUMBERS. THAT'S WHAT WE ARE KNOWN FOR.
+
+            WE CRUNCH THE NUMBERS.
+            THAT'S WHAT WE ARE KNOWN FOR.
+
         </div>
 
-        <a href="#insights" class="button">
+        <a
+            href="#insights"
+            class="button"
+        >
             EXPLORE INSIGHTS →
         </a>
 
@@ -769,13 +1110,22 @@ footer {
     <div class="graph-area">
 
         <div class="growth-card">
-            <small>Insights Growth</small>
-            <strong>+45%</strong>
+
+            <small>
+                Insights Growth
+            </small>
+
+            <strong>
+                +45%
+            </strong>
+
         </div>
+
 
         <div class="graph">
 
             <div class="bars">
+
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -783,7 +1133,9 @@ footer {
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
+
             </div>
+
 
             <div class="line">
 
@@ -798,16 +1150,63 @@ footer {
                         L500,65
                         L600,115
                         L700,30
-                    "/>
+                    " />
 
-                    <circle class="dot" cx="0" cy="235" r="7"/>
-                    <circle class="dot" cx="100" cy="170" r="7"/>
-                    <circle class="dot" cx="200" cy="180" r="7"/>
-                    <circle class="dot" cx="300" cy="95" r="7"/>
-                    <circle class="dot" cx="400" cy="135" r="7"/>
-                    <circle class="dot" cx="500" cy="65" r="7"/>
-                    <circle class="dot" cx="600" cy="115" r="7"/>
-                    <circle class="dot" cx="700" cy="30" r="7"/>
+                    <circle
+                        class="dot"
+                        cx="0"
+                        cy="235"
+                        r="7"
+                    />
+
+                    <circle
+                        class="dot"
+                        cx="100"
+                        cy="170"
+                        r="7"
+                    />
+
+                    <circle
+                        class="dot"
+                        cx="200"
+                        cy="180"
+                        r="7"
+                    />
+
+                    <circle
+                        class="dot"
+                        cx="300"
+                        cy="95"
+                        r="7"
+                    />
+
+                    <circle
+                        class="dot"
+                        cx="400"
+                        cy="135"
+                        r="7"
+                    />
+
+                    <circle
+                        class="dot"
+                        cx="500"
+                        cy="65"
+                        r="7"
+                    />
+
+                    <circle
+                        class="dot"
+                        cx="600"
+                        cy="115"
+                        r="7"
+                    />
+
+                    <circle
+                        class="dot"
+                        cx="700"
+                        cy="30"
+                        r="7"
+                    />
 
                 </svg>
 
@@ -820,39 +1219,59 @@ footer {
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      ABOUT
-========================= -->
+========================================= -->
 
-<section class="about" id="about">
+<section
+    class="about"
+    id="about"
+>
 
     <div class="about-grid">
+
 
         <div>
 
             <div class="section-label">
-                ABOUT US
+                ABOUT POLL
             </div>
 
             <h2>
+
                 Data.<br>
                 Insight.<br>
                 Impact.
+
             </h2>
 
+
             <p class="about-text">
-                At Poll, we believe that accurate insights build
-                stronger strategies. Our data-driven approach helps
-                transform raw numbers into meaningful information
-                that people can understand and act upon.
+
+                At POLL, we believe that
+                accurate insights build
+                stronger decisions.
+
+                We collect, organize and
+                analyze information to reveal
+                what the numbers are saying.
+
             </p>
 
+
             <div class="crunch-line">
-                <span>OUR PHILOSOPHY</span>
+
+                <span>
+                    OUR PHILOSOPHY
+                </span>
+
                 <strong>
+
                     WE CRUNCH THE NUMBERS.<br>
                     THAT'S WHAT WE ARE KNOWN FOR.
+
                 </strong>
+
             </div>
 
         </div>
@@ -860,11 +1279,16 @@ footer {
 
         <div class="cards">
 
+
             <div class="card">
 
-                <div class="card-icon">◎</div>
+                <div class="card-icon">
+                    ◎
+                </div>
 
-                <h3>ACCURATE</h3>
+                <h3>
+                    ACCURATE
+                </h3>
 
                 <p>
                     Precision in every data point.
@@ -875,12 +1299,17 @@ footer {
 
             <div class="card">
 
-                <div class="card-icon">↗</div>
+                <div class="card-icon">
+                    ↗
+                </div>
 
-                <h3>INSIGHTFUL</h3>
+                <h3>
+                    INSIGHTFUL
+                </h3>
 
                 <p>
-                    Turning data into actionable insights.
+                    Turning data into meaningful
+                    insights.
                 </p>
 
             </div>
@@ -888,15 +1317,21 @@ footer {
 
             <div class="card">
 
-                <div class="card-icon">✦</div>
+                <div class="card-icon">
+                    ✦
+                </div>
 
-                <h3>IMPACTFUL</h3>
+                <h3>
+                    IMPACTFUL
+                </h3>
 
                 <p>
-                    Helping people understand the bigger picture.
+                    Helping people understand
+                    the bigger picture.
                 </p>
 
             </div>
+
 
         </div>
 
@@ -905,105 +1340,383 @@ footer {
 </section>
 
 
-<!-- =========================
-     INSIGHTS
-========================= -->
+<!-- =========================================
+     GENRES
+========================================= -->
 
-<section class="insights" id="insights">
+<section
+    class="genres"
+    id="genres"
+>
+
+    <div class="section-label">
+        EXPLORE POLL
+    </div>
+
+    <h2>
+        Our Insights
+    </h2>
+
+    <p class="genres-description">
+
+        Explore POLL across different
+        categories. Each category connects
+        you to its dedicated area of interest.
+
+    </p>
+
+
+    <div class="genre-grid">
+
+
+        <!-- SPORTS -->
+
+        <a
+            class="genre-card"
+            href="#sports-results"
+        >
+
+            <div class="genre-icon">
+                🏆
+            </div>
+
+            <h3>
+                Sports
+            </h3>
+
+            <p>
+                Explore sports preferences,
+                voting patterns and results.
+            </p>
+
+        </a>
+
+
+        <!-- VIDEO GAMES -->
+
+        <a
+            class="genre-card"
+            href="#games-results"
+        >
+
+            <div class="genre-icon">
+                🎮
+            </div>
+
+            <h3>
+                Video Games
+            </h3>
+
+            <p>
+                Explore gaming preferences
+                and player choices.
+            </p>
+
+        </a>
+
+
+        <!-- AUTOMOBILES -->
+
+        <a
+            class="genre-card"
+            href="https://www.google.com/search?q=automobile+polls+and+statistics"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div class="genre-icon">
+                🚗
+            </div>
+
+            <h3>
+                Automobiles
+            </h3>
+
+            <p>
+                Explore automobile trends,
+                preferences and data.
+            </p>
+
+        </a>
+
+
+        <!-- POLITICS -->
+
+        <a
+            class="genre-card"
+            href="https://www.google.com/search?q=political+polls+and+statistics"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div class="genre-icon">
+                🏛️
+            </div>
+
+            <h3>
+                Politics
+            </h3>
+
+            <p>
+                Explore public opinion,
+                polling and political data.
+            </p>
+
+        </a>
+
+
+        <!-- FUTURE -->
+
+        <a
+            class="genre-card"
+            href="https://www.google.com/search?q=future+technology+trends+statistics"
+            target="_blank"
+            rel="noopener"
+        >
+
+            <div class="genre-icon">
+                🔮
+            </div>
+
+            <h3>
+                Future
+            </h3>
+
+            <p>
+                Explore emerging trends,
+                technology and tomorrow's data.
+            </p>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     INSIGHTS / CHARTS
+========================================= -->
+
+<section
+    class="insights"
+    id="insights"
+>
 
     <div class="section-label">
         POLL RESULTS
     </div>
 
-    <h2>Accurate Insights</h2>
+    <h2>
+        Accurate Insights
+    </h2>
 
     <p class="insights-description">
-        Here's what the numbers say. Explore the latest POLL
-        results across sports and video games. Click a section
-        of a chart to learn more.
+
+        Here's what the numbers say.
+
+        Explore the latest POLL results
+        across sports and video games.
+
+        Click any chart section or
+        legend item to explore that topic.
+
     </p>
 
 
     <div class="charts-container">
 
 
-        <!-- SPORTS -->
+        <!-- SPORTS CHART -->
 
-        <div class="chart-card" id="sports-results">
+        <div
+            class="chart-card"
+            id="sports-results"
+        >
 
             <h3>
-                <a href="#sports-results" class="chart-title-link">
+
+                <a
+                    href="#sports-results"
+                    class="chart-title-link"
+                >
                     🏆 Sports
                 </a>
+
             </h3>
+
 
             <p class="total-votes">
                 95 total votes
             </p>
 
+
             <div class="chart-wrapper">
-                <canvas id="sportsChart"></canvas>
+
+                <canvas
+                    id="sportsChart"
+                ></canvas>
+
             </div>
 
+
             <p class="click-note">
-                Click a section to explore that sport.
+
+                Click any sport in the
+                chart or legend to explore it.
+
             </p>
 
         </div>
 
 
-        <!-- VIDEO GAMES -->
+        <!-- VIDEO GAME CHART -->
 
-        <div class="chart-card" id="games-results">
+        <div
+            class="chart-card"
+            id="games-results"
+        >
 
             <h3>
-                <a href="#games-results" class="chart-title-link">
+
+                <a
+                    href="#games-results"
+                    class="chart-title-link"
+                >
                     🎮 Video Games
                 </a>
+
             </h3>
+
 
             <p class="total-votes">
                 13 total votes
             </p>
 
+
             <div class="chart-wrapper">
-                <canvas id="gamesChart"></canvas>
+
+                <canvas
+                    id="gamesChart"
+                ></canvas>
+
             </div>
 
+
             <p class="click-note">
-                Click a section to explore that game.
+
+                Click any game in the
+                chart or legend to explore it.
+
             </p>
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     LEADERSHIP
-========================= -->
+<!-- =========================================
+     DATA TABLE
+========================================= -->
 
-<section class="leadership" id="leadership">
+<section
+    class="data-section"
+    id="data"
+>
+
+    <div class="section-label">
+        DATA BREAKDOWN
+    </div>
+
+    <h2>
+        The Numbers
+    </h2>
+
+    <p class="data-description">
+
+        Every result can be explored
+        individually.
+
+    </p>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        CATEGORY
+                    </th>
+
+                    <th>
+                        RESULT
+                    </th>
+
+                    <th>
+                        VOTES
+                    </th>
+
+                    <th>
+                        EXPLORE
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="dataTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     LEADERSHIP
+========================================= -->
+
+<section
+    class="leadership"
+    id="leadership"
+>
 
     <div class="section-label">
         OUR LEADERSHIP
     </div>
 
     <h2>
-        Guiding Poll<br>
+
+        Guiding POLL<br>
         Towards Excellence
+
     </h2>
 
 
     <div class="leaders">
 
+
+        <!-- CEO -->
+
         <div class="leader">
 
             <div class="profile"></div>
 
-            <h3>CEO</h3>
+            <h3>
+                CEO
+            </h3>
 
             <div class="blank-name">
                 —
@@ -1012,11 +1725,15 @@ footer {
         </div>
 
 
+        <!-- CHAIRMAN -->
+
         <div class="leader">
 
             <div class="profile"></div>
 
-            <h3>CHAIRMAN</h3>
+            <h3>
+                CHAIRMAN
+            </h3>
 
             <div class="blank-name">
                 —
@@ -1025,37 +1742,49 @@ footer {
         </div>
 
 
+        <!-- VICE CEO -->
+
         <div class="leader">
 
             <div class="profile"></div>
 
-            <h3>VICE CEO</h3>
+            <h3>
+                VICE CEO
+            </h3>
 
             <div class="blank-name">
                 —
             </div>
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      CONTACT
-========================= -->
+========================================= -->
 
-<section class="contact" id="contact">
+<section
+    class="contact"
+    id="contact"
+>
 
     <div class="contact-box">
+
 
         <div>
 
             <h2>
-                Ready to uncover accurate insights
-                that drive real results?
+
+                Ready to uncover accurate
+                insights that drive real results?
+
             </h2>
+
 
             <a
                 class="contact-email"
@@ -1066,46 +1795,58 @@ footer {
 
         </div>
 
+
         <a
             href="mailto:apkyoda@gmail.com?subject=POLL%20Inquiry"
             class="contact-button"
         >
+
             GET IN TOUCH →
+
         </a>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      FOOTER
-========================= -->
+========================================= -->
 
 <footer>
 
     <div>
-        © 2026 POLL. All rights reserved.
+
+        © 2026 POLL.
+        All rights reserved.
+
     </div>
 
+
     <div>
+
         The blueprint of accurate insights.
+
     </div>
 
 </footer>
 
 
-<!-- =========================
-     CHART JAVASCRIPT
-========================= -->
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
 <script>
 
-/* =========================
+
+/* =========================================
    SPORTS DATA
-========================= */
+========================================= */
 
 const sportsLabels = [
+
     "Volleyball",
     "Handball",
     "Badminton",
@@ -1122,9 +1863,12 @@ const sportsLabels = [
     "Chess",
     "Table Tennis",
     "Basket Ball"
+
 ];
 
+
 const sportsVotes = [
+
     4,
     4,
     17,
@@ -1141,14 +1885,16 @@ const sportsVotes = [
     5,
     7,
     13
+
 ];
 
 
-/* =========================
+/* =========================================
    VIDEO GAME DATA
-========================= */
+========================================= */
 
 const gameLabels = [
+
     "Minecraft",
     "Blox Fruits",
     "Barry's Prison Run",
@@ -1156,9 +1902,12 @@ const gameLabels = [
     "FC Mobile",
     "Piggy",
     "GTA 5"
+
 ];
 
+
 const gameVotes = [
+
     2,
     2,
     2,
@@ -1166,14 +1915,16 @@ const gameVotes = [
     2,
     1,
     2
+
 ];
 
 
-/* =========================
-   CHART COLORS
-========================= */
+/* =========================================
+   COLORS
+========================================= */
 
 const chartColors = [
+
     "#176CFF",
     "#2F80ED",
     "#56CCF2",
@@ -1190,31 +1941,67 @@ const chartColors = [
     "#5B7CFA",
     "#4CAF50",
     "#FF8A65"
+
 ];
 
 
-/* =========================
-   SPORTS PIE CHART
-========================= */
+/* =========================================
+   GOOGLE SEARCH LINK
+========================================= */
+
+function openSearch(topic) {
+
+    const url =
+        "https://www.google.com/search?q=" +
+        encodeURIComponent(topic);
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+/* =========================================
+   SPORTS CHART
+========================================= */
 
 new Chart(
-    document.getElementById("sportsChart"),
+
+    document.getElementById(
+        "sportsChart"
+    ),
+
     {
+
         type: "pie",
 
+
         data: {
+
             labels: sportsLabels,
 
-            datasets: [{
-                data: sportsVotes,
+            datasets: [
 
-                backgroundColor: chartColors,
+                {
 
-                borderColor: "#ffffff",
+                    data: sportsVotes,
 
-                borderWidth: 3
-            }]
+                    backgroundColor:
+                        chartColors,
+
+                    borderColor:
+                        "#ffffff",
+
+                    borderWidth: 3
+
+                }
+
+            ]
+
         },
+
 
         options: {
 
@@ -1222,26 +2009,32 @@ new Chart(
 
             maintainAspectRatio: false,
 
-            onClick: function(event, elements) {
 
-                if (elements.length > 0) {
+            onClick:
+            function(
+                event,
+                elements
+            ) {
 
-                    const index = elements[0].index;
+                if (
+                    elements.length > 0
+                ) {
 
-                    const sport = sportsLabels[index];
+                    const index =
+                        elements[0].index;
 
-                    const searchURL =
-                        "https://www.google.com/search?q=" +
-                        encodeURIComponent(
-                            sport + " sport"
-                        );
+                    const sport =
+                        sportsLabels[index];
 
-                    window.open(
-                        searchURL,
-                        "_blank"
+                    openSearch(
+                        sport +
+                        " sport"
                     );
+
                 }
+
             },
+
 
             plugins: {
 
@@ -1250,27 +2043,38 @@ new Chart(
                     position: "right",
 
                     labels: {
+
                         padding: 12,
 
                         font: {
+
                             size: 12
+
                         }
+
                     }
+
                 },
+
 
                 tooltip: {
 
                     callbacks: {
 
-                        label: function(context) {
+                        label:
+                        function(context) {
 
-                            const votes = context.raw;
+                            const votes =
+                                context.raw;
 
-                            const total = 95;
+                            const total =
+                                95;
 
                             const percentage =
                                 (
-                                    votes / total * 100
+                                    votes /
+                                    total *
+                                    100
                                 ).toFixed(1);
 
                             return (
@@ -1280,39 +2084,66 @@ new Chart(
                                 percentage +
                                 "%)"
                             );
+
                         }
+
                     }
+
                 }
+
             }
+
         }
+
     }
+
 );
 
 
-/* =========================
-   VIDEO GAME PIE CHART
-========================= */
+/* =========================================
+   VIDEO GAME CHART
+========================================= */
 
 new Chart(
-    document.getElementById("gamesChart"),
+
+    document.getElementById(
+        "gamesChart"
+    ),
+
     {
+
         type: "pie",
+
 
         data: {
 
-            labels: gameLabels,
+            labels:
+                gameLabels,
 
-            datasets: [{
+            datasets: [
 
-                data: gameVotes,
+                {
 
-                backgroundColor: chartColors.slice(0, 7),
+                    data:
+                        gameVotes,
 
-                borderColor: "#ffffff",
+                    backgroundColor:
+                        chartColors.slice(
+                            0,
+                            7
+                        ),
 
-                borderWidth: 3
-            }]
+                    borderColor:
+                        "#ffffff",
+
+                    borderWidth: 3
+
+                }
+
+            ]
+
         },
+
 
         options: {
 
@@ -1320,24 +2151,31 @@ new Chart(
 
             maintainAspectRatio: false,
 
-            onClick: function(event, elements) {
 
-                if (elements.length > 0) {
+            onClick:
+            function(
+                event,
+                elements
+            ) {
 
-                    const index = elements[0].index;
+                if (
+                    elements.length > 0
+                ) {
 
-                    const game = gameLabels[index];
+                    const index =
+                        elements[0].index;
 
-                    const searchURL =
-                        "https://www.google.com/search?q=" +
-                        encodeURIComponent(game);
+                    const game =
+                        gameLabels[index];
 
-                    window.open(
-                        searchURL,
-                        "_blank"
+                    openSearch(
+                        game
                     );
+
                 }
+
             },
+
 
             plugins: {
 
@@ -1346,27 +2184,38 @@ new Chart(
                     position: "right",
 
                     labels: {
+
                         padding: 15,
 
                         font: {
+
                             size: 13
+
                         }
+
                     }
+
                 },
+
 
                 tooltip: {
 
                     callbacks: {
 
-                        label: function(context) {
+                        label:
+                        function(context) {
 
-                            const votes = context.raw;
+                            const votes =
+                                context.raw;
 
-                            const total = 13;
+                            const total =
+                                13;
 
                             const percentage =
                                 (
-                                    votes / total * 100
+                                    votes /
+                                    total *
+                                    100
                                 ).toFixed(1);
 
                             return (
@@ -1376,15 +2225,186 @@ new Chart(
                                 percentage +
                                 "%)"
                             );
+
                         }
+
                     }
+
                 }
+
             }
+
         }
+
     }
+
 );
 
+
+/* =========================================
+   CLICKABLE LEGENDS
+========================================= */
+
+document
+    .getElementById("sportsChart")
+    .addEventListener(
+        "click",
+        function() {}
+    );
+
+
+/* =========================================
+   DATA TABLE
+========================================= */
+
+const table =
+    document.getElementById(
+        "dataTable"
+    );
+
+
+/* Sports rows */
+
+for (
+    let i = 0;
+    i < sportsLabels.length;
+    i++
+) {
+
+    const row =
+        document.createElement(
+            "tr"
+        );
+
+
+    row.innerHTML = `
+
+        <td>
+            Sports
+        </td>
+
+        <td>
+
+            <a
+                class="data-link"
+                href="https://www.google.com/search?q=${encodeURIComponent(
+                    sportsLabels[i] + " sport"
+                )}"
+                target="_blank"
+                rel="noopener"
+            >
+
+                ${sportsLabels[i]}
+
+            </a>
+
+        </td>
+
+        <td class="vote-number">
+
+            ${sportsVotes[i]}
+
+        </td>
+
+        <td>
+
+            <a
+                class="data-link"
+                href="https://www.google.com/search?q=${encodeURIComponent(
+                    sportsLabels[i] + " sport"
+                )}"
+                target="_blank"
+                rel="noopener"
+            >
+
+                Explore →
+
+            </a>
+
+        </td>
+
+    `;
+
+
+    table.appendChild(
+        row
+    );
+
+}
+
+
+/* Video game rows */
+
+for (
+    let i = 0;
+    i < gameLabels.length;
+    i++
+) {
+
+    const row =
+        document.createElement(
+            "tr"
+        );
+
+
+    row.innerHTML = `
+
+        <td>
+            Video Games
+        </td>
+
+        <td>
+
+            <a
+                class="data-link"
+                href="https://www.google.com/search?q=${encodeURIComponent(
+                    gameLabels[i]
+                )}"
+                target="_blank"
+                rel="noopener"
+            >
+
+                ${gameLabels[i]}
+
+            </a>
+
+        </td>
+
+        <td class="vote-number">
+
+            ${gameVotes[i]}
+
+        </td>
+
+        <td>
+
+            <a
+                class="data-link"
+                href="https://www.google.com/search?q=${encodeURIComponent(
+                    gameLabels[i]
+                )}"
+                target="_blank"
+                rel="noopener"
+            >
+
+                Explore →
+
+            </a>
+
+        </td>
+
+    `;
+
+
+    table.appendChild(
+        row
+    );
+
+}
+
+
 </script>
+
 
 </body>
 </html>
