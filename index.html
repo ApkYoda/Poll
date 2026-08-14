@@ -6,8 +6,9 @@
 
 <title>POLL | The blueprint of accurate insights</title>
 
-<style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<style>
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +25,6 @@ body {
     color: #071a45;
 }
 
-
 /* =========================
    NAVIGATION
 ========================= */
@@ -35,7 +35,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 0 6%;
-    background: rgba(255,255,255,0.96);
+    background: rgba(255,255,255,0.97);
     border-bottom: 1px solid #e8eef8;
     position: sticky;
     top: 0;
@@ -80,7 +80,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 32px;
 }
 
 nav a {
@@ -95,30 +95,20 @@ nav a:hover {
     color: #176cff;
 }
 
-
 /* =========================
    HERO
 ========================= */
 
 .hero {
-    min-height: 610px;
+    min-height: 620px;
     display: flex;
     align-items: center;
     padding: 70px 6%;
     position: relative;
     overflow: hidden;
-
     background:
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(42,111,255,0.12),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #f7faff 100%
-        );
+        radial-gradient(circle at 80% 30%, rgba(42,111,255,0.12), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #f7faff 100%);
 }
 
 .hero-content {
@@ -138,7 +128,7 @@ nav a:hover {
     color: #1763ef;
     font-size: clamp(22px, 3vw, 34px);
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .hero-description {
@@ -146,45 +136,42 @@ nav a:hover {
     font-size: 18px;
     line-height: 1.8;
     color: #53617a;
+    margin-bottom: 25px;
+}
+
+.crunch-hero {
+    font-size: 18px;
+    font-weight: 800;
+    color: #081c4d;
     margin-bottom: 35px;
+    letter-spacing: 0.5px;
 }
 
 .button {
     display: inline-block;
     padding: 17px 28px;
-    background: linear-gradient(
-        135deg,
-        #102b70,
-        #176cff
-    );
+    background: linear-gradient(135deg, #102b70, #176cff);
     color: white;
     text-decoration: none;
     border-radius: 15px;
     font-weight: 700;
-
-    box-shadow:
-        0 15px 35px rgba(23,108,255,0.22);
-
+    box-shadow: 0 15px 35px rgba(23,108,255,0.22);
     transition: 0.3s;
 }
 
 .button:hover {
     transform: translateY(-4px);
-
-    box-shadow:
-        0 20px 40px rgba(23,108,255,0.32);
+    box-shadow: 0 20px 40px rgba(23,108,255,0.32);
 }
 
-
 /* =========================
-   DATA GRAPH
+   HERO GRAPH
 ========================= */
 
 .graph-area {
     width: 50%;
     height: 430px;
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,10 +181,8 @@ nav a:hover {
     width: 90%;
     height: 340px;
     position: relative;
-
     border-left: 2px solid #dbe5f5;
     border-bottom: 2px solid #dbe5f5;
-
     background:
         repeating-linear-gradient(
             to top,
@@ -209,13 +194,10 @@ nav a:hover {
 
 .bars {
     position: absolute;
-
     bottom: 0;
     left: 7%;
     right: 7%;
-
     height: 90%;
-
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -223,70 +205,30 @@ nav a:hover {
 
 .bar {
     width: 12%;
-
     border-radius: 8px 8px 0 0;
-
-    background:
-        linear-gradient(
-            to top,
-            #1262dc,
-            #5bb7ff
-        );
-
-    box-shadow:
-        0 15px 25px rgba(27,104,220,0.18);
-
+    background: linear-gradient(to top, #1262dc, #5bb7ff);
+    box-shadow: 0 15px 25px rgba(27,104,220,0.18);
     animation: rise 1.2s ease-out;
 }
 
-.bar:nth-child(1) {
-    height: 25%;
-}
-
-.bar:nth-child(2) {
-    height: 38%;
-}
-
-.bar:nth-child(3) {
-    height: 34%;
-}
-
-.bar:nth-child(4) {
-    height: 55%;
-}
-
-.bar:nth-child(5) {
-    height: 48%;
-}
-
-.bar:nth-child(6) {
-    height: 68%;
-}
-
-.bar:nth-child(7) {
-    height: 85%;
-}
+.bar:nth-child(1) { height: 25%; }
+.bar:nth-child(2) { height: 38%; }
+.bar:nth-child(3) { height: 34%; }
+.bar:nth-child(4) { height: 55%; }
+.bar:nth-child(5) { height: 48%; }
+.bar:nth-child(6) { height: 68%; }
+.bar:nth-child(7) { height: 85%; }
 
 @keyframes rise {
-
-    from {
-        height: 0;
-    }
-
+    from { height: 0; }
 }
-
-
-/* Line graph */
 
 .line {
     position: absolute;
-
     left: 5%;
     right: 3%;
     top: 10%;
-
     height: 80%;
-
     pointer-events: none;
 }
 
@@ -298,11 +240,8 @@ nav a:hover {
 
 .line path {
     fill: none;
-
     stroke: #176cff;
-
     stroke-width: 4;
-
     stroke-linecap: round;
     stroke-linejoin: round;
 }
@@ -313,42 +252,21 @@ nav a:hover {
     stroke-width: 3;
 }
 
-
-/* Growth card */
-
 .growth-card {
     position: absolute;
-
     right: -5%;
     top: -5%;
-
     padding: 22px 28px;
-
-    background: rgba(
-        239,
-        246,
-        255,
-        0.95
-    );
-
+    background: rgba(239,246,255,0.95);
     border: 1px solid #dce8fb;
-
     border-radius: 18px;
-
-    box-shadow:
-        0 20px 50px rgba(
-            17,
-            64,
-            130,
-            0.12
-        );
+    box-shadow: 0 20px 50px rgba(17,64,130,0.12);
+    z-index: 2;
 }
 
 .growth-card small {
     color: #4e5e7c;
-
     display: block;
-
     margin-bottom: 5px;
 }
 
@@ -357,259 +275,177 @@ nav a:hover {
     color: #176cff;
 }
 
-
 /* =========================
    ABOUT
 ========================= */
 
 .about {
     padding: 100px 6%;
-
     background:
-        radial-gradient(
-            circle at 80% 20%,
-            rgba(38,102,255,0.15),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #061637,
-            #0b2454
-        );
-
+        radial-gradient(circle at 80% 20%, rgba(38,102,255,0.15), transparent 30%),
+        linear-gradient(135deg, #061637, #0b2454);
     color: white;
-}
-
-.section-label {
-    color: #2e76ff;
-
-    font-size: 15px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 20px;
 }
 
 .about-grid {
     display: grid;
-
-    grid-template-columns:
-        1fr 2fr;
-
+    grid-template-columns: 1fr 2fr;
     gap: 60px;
-
     align-items: center;
+}
+
+.section-label {
+    color: #2e76ff;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
 .about h2 {
     font-size: 50px;
-
     line-height: 1.05;
-
     margin-bottom: 25px;
 }
 
 .about-text {
     color: #c8d5eb;
-
     line-height: 1.8;
-
     font-size: 17px;
+}
+
+.crunch-line {
+    margin-top: 40px;
+    padding: 25px;
+    border-left: 4px solid #176cff;
+    background: rgba(255,255,255,0.05);
+    border-radius: 0 15px 15px 0;
+}
+
+.crunch-line span {
+    display: block;
+    color: #79b4ff;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.crunch-line strong {
+    font-size: 22px;
+    color: white;
 }
 
 .cards {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .card {
     padding: 35px 25px;
-
     min-height: 270px;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.12);
-
-    background:
-        rgba(255,255,255,0.05);
-
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.05);
     border-radius: 20px;
-
     transition: 0.3s;
 }
 
 .card:hover {
     transform: translateY(-8px);
-
-    background:
-        rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.08);
 }
 
 .card-icon {
     font-size: 42px;
-
     margin-bottom: 35px;
 }
 
 .card h3 {
     font-size: 20px;
-
     margin-bottom: 15px;
 }
 
 .card p {
     color: #b9c8df;
-
     line-height: 1.6;
 }
 
-
 /* =========================
-   INSIGHTS / GENRES
+   INSIGHTS
 ========================= */
 
 .insights {
     padding: 100px 6%;
-
     background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(31,105,255,0.10),
-            transparent 30%
-        ),
+        radial-gradient(circle at 90% 10%, rgba(40,110,255,0.08), transparent 25%),
         #f7faff;
-
-    text-align: center;
 }
 
 .insights h2 {
-    font-size: 50px;
-
+    font-size: 52px;
     color: #081c4d;
-
-    margin-bottom: 18px;
-}
-
-.insights-intro {
-    max-width: 650px;
-
-    margin:
-        0 auto 55px;
-
-    color: #65728a;
-
-    font-size: 17px;
-
-    line-height: 1.7;
-}
-
-.genre-grid {
-    max-width: 1150px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 22px;
-}
-
-.genre-card {
-    padding: 40px 25px;
-
-    min-height: 280px;
-
-    background: white;
-
-    border:
-        1px solid
-        #e1e9f5;
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 15px 40px
-        rgba(20,60,120,0.07);
-
-    transition: 0.3s;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.genre-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-    right: 0;
-
-    height: 5px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #1262dc,
-            #5bb7ff
-        );
-}
-
-.genre-card:hover {
-    transform: translateY(-9px);
-
-    box-shadow:
-        0 25px 55px
-        rgba(20,60,120,0.14);
-}
-
-.genre-icon {
-    width: 70px;
-    height: 70px;
-
-    margin:
-        0 auto 25px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 18px;
-
-    background:
-        #edf4ff;
-
-    font-size: 32px;
-}
-
-.genre-card h3 {
-    color: #09245e;
-
-    font-size: 20px;
-
     margin-bottom: 15px;
-
-    letter-spacing: 1px;
 }
 
-.genre-card p {
-    color: #68758c;
-
-    line-height: 1.6;
+.insights-description {
+    color: #65728a;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-bottom: 50px;
 }
 
+.charts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.chart-card {
+    background: white;
+    border: 1px solid #e1e8f3;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 20px 50px rgba(20, 50, 100, 0.08);
+    text-align: center;
+}
+
+.chart-card h3 {
+    font-size: 28px;
+    color: #081c4d;
+    margin-bottom: 8px;
+}
+
+.chart-title-link {
+    color: #081c4d;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.chart-title-link:hover {
+    color: #176cff;
+}
+
+.total-votes {
+    color: #176cff;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 430px;
+    margin: auto;
+}
+
+.click-note {
+    margin-top: 20px;
+    color: #8b98aa;
+    font-size: 13px;
+}
 
 /* =========================
    LEADERSHIP
@@ -617,198 +453,133 @@ nav a:hover {
 
 .leadership {
     padding: 100px 6%;
-
     background:
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(33,106,255,0.1),
-            transparent 30%
-        ),
+        radial-gradient(circle at 90% 80%, rgba(33,106,255,0.1), transparent 30%),
         #ffffff;
 }
 
 .leadership h2 {
     font-size: 48px;
-
     margin-bottom: 55px;
-
     line-height: 1.1;
 }
 
 .leaders {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 28px;
 }
 
 .leader {
     min-height: 360px;
-
-    border:
-        1px solid
-        #e3eaf5;
-
+    border: 1px solid #e3eaf5;
     border-radius: 22px;
-
     padding: 40px;
-
     text-align: center;
-
-    background:
-        rgba(255,255,255,0.9);
-
-    box-shadow:
-        0 20px 50px
-        rgba(22,55,100,0.07);
-
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 20px 50px rgba(22,55,100,0.07);
     transition: 0.3s;
 }
 
 .leader:hover {
     transform: translateY(-7px);
-
-    box-shadow:
-        0 25px 60px
-        rgba(22,55,100,0.12);
+    box-shadow: 0 25px 60px rgba(22,55,100,0.12);
 }
-
-
-/* Profile placeholder */
 
 .profile {
     width: 130px;
     height: 130px;
-
-    margin:
-        0 auto 30px;
-
+    margin: 0 auto 30px;
     border-radius: 50%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #edf2f8,
-            #d9e0eb
-        );
-
+    background: linear-gradient(145deg, #edf2f8, #d9e0eb);
     position: relative;
 }
 
 .profile::before {
     content: "";
-
     position: absolute;
-
     width: 43px;
     height: 43px;
-
     border-radius: 50%;
-
     background: #aeb8c9;
-
     top: 23px;
     left: 44px;
 }
 
 .profile::after {
     content: "";
-
     position: absolute;
-
     width: 75px;
     height: 42px;
-
-    border-radius:
-        50px 50px
-        20px 20px;
-
+    border-radius: 50px 50px 20px 20px;
     background: #aeb8c9;
-
     bottom: 18px;
     left: 28px;
 }
 
 .leader h3 {
     font-size: 21px;
-
     margin-bottom: 15px;
 }
 
 .blank-name {
     color: #b9c0cb;
-
     font-size: 18px;
-
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
-
 
 /* =========================
    CONTACT
 ========================= */
 
 .contact {
-    padding:
-        30px 6% 80px;
+    padding: 30px 6% 80px;
 }
 
 .contact-box {
-    min-height: 150px;
-
-    padding:
-        35px 50px;
-
+    min-height: 180px;
+    padding: 35px 50px;
     border-radius: 24px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #09215a,
-            #123a94
-        );
-
+    background: linear-gradient(135deg, #09215a, #123a94);
     color: white;
-
     display: flex;
-
     align-items: center;
-
-    justify-content:
-        space-between;
-
+    justify-content: space-between;
     gap: 30px;
-
-    box-shadow:
-        0 25px 60px
-        rgba(10,50,120,0.2);
+    box-shadow: 0 25px 60px rgba(10,50,120,0.2);
 }
 
 .contact-box h2 {
     font-size: 27px;
-
     max-width: 600px;
 }
 
-.contact-button {
-    padding:
-        16px 27px;
-
-    background: #176cff;
-
-    border-radius: 12px;
-
-    color: white;
-
+.contact-email {
+    color: #8fc3ff;
     text-decoration: none;
-
-    font-weight: bold;
-
-    white-space: nowrap;
+    display: block;
+    margin-top: 12px;
 }
 
+.contact-email:hover {
+    text-decoration: underline;
+}
+
+.contact-button {
+    padding: 16px 27px;
+    background: #176cff;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    background: #3280ff;
+}
 
 /* =========================
    FOOTER
@@ -816,27 +587,23 @@ nav a:hover {
 
 footer {
     padding: 35px 6%;
-
     background: #061431;
-
     color: #91a3c3;
-
     display: flex;
-
-    justify-content:
-        space-between;
-
+    justify-content: space-between;
     align-items: center;
-
     font-size: 14px;
 }
-
 
 /* =========================
    RESPONSIVE
 ========================= */
 
 @media (max-width: 1000px) {
+
+    nav ul {
+        gap: 15px;
+    }
 
     .hero {
         flex-direction: column;
@@ -856,30 +623,22 @@ footer {
     }
 
     .cards {
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: 1fr;
     }
 
-    .genre-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+    .charts-container {
+        grid-template-columns: 1fr;
     }
 
     .leaders {
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: 1fr;
     }
-
 }
 
-
-@media (max-width: 700px) {
+@media (max-width: 650px) {
 
     nav {
         height: 75px;
-
-        padding:
-            0 5%;
     }
 
     nav ul {
@@ -891,8 +650,7 @@ footer {
     }
 
     .hero {
-        padding:
-            50px 6%;
+        padding: 50px 6%;
     }
 
     .hero h1 {
@@ -914,8 +672,7 @@ footer {
     .about,
     .insights,
     .leadership {
-        padding:
-            70px 6%;
+        padding: 70px 6%;
     }
 
     .about h2,
@@ -924,42 +681,30 @@ footer {
         font-size: 38px;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
+    .chart-card {
+        padding: 20px;
     }
 
-    .genre-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .leaders {
-        grid-template-columns: 1fr;
+    .chart-wrapper {
+        height: 350px;
     }
 
     .contact-box {
         padding: 30px;
-
         flex-direction: column;
-
         align-items: flex-start;
     }
 
     footer {
         flex-direction: column;
-
         gap: 10px;
-
         text-align: center;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =========================
      NAVIGATION
@@ -970,50 +715,21 @@ footer {
     <div class="logo">
 
         <div class="logo-icon">
-
             <span></span>
             <span></span>
             <span></span>
-
         </div>
 
         POLL
 
     </div>
 
-
     <ul>
-
-        <li>
-            <a href="#home">
-                HOME
-            </a>
-        </li>
-
-        <li>
-            <a href="#about">
-                ABOUT US
-            </a>
-        </li>
-
-        <li>
-            <a href="#insights">
-                INSIGHTS
-            </a>
-        </li>
-
-        <li>
-            <a href="#leadership">
-                LEADERSHIP
-            </a>
-        </li>
-
-        <li>
-            <a href="#contact">
-                CONTACT
-            </a>
-        </li>
-
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT US</a></li>
+        <li><a href="#insights">INSIGHTS</a></li>
+        <li><a href="#leadership">LEADERSHIP</a></li>
+        <li><a href="mailto:apkyoda@gmail.com">CONTACT</a></li>
     </ul>
 
 </nav>
@@ -1023,90 +739,55 @@ footer {
      HERO
 ========================= -->
 
-<section
-    class="hero"
-    id="home"
->
+<section class="hero" id="home">
 
     <div class="hero-content">
 
-        <h1>
-            POLL
-        </h1>
+        <h1>POLL</h1>
 
         <div class="tagline">
-
-            The blueprint of
-            accurate insights
-
+            The blueprint of accurate insights
         </div>
 
         <p class="hero-description">
-
-            We turn data into clarity.
-            Helping businesses and
-            organizations make smarter
-            decisions through accurate
-            insights and powerful
-            analytics.
-
+            We turn data into clarity. Helping businesses and
+            organizations understand what the numbers are saying
+            and make smarter decisions.
         </p>
 
-        <a
-            href="#insights"
-            class="button"
-        >
+        <div class="crunch-hero">
+            WE CRUNCH THE NUMBERS. THAT'S WHAT WE ARE KNOWN FOR.
+        </div>
 
+        <a href="#insights" class="button">
             EXPLORE INSIGHTS →
-
         </a>
 
     </div>
 
 
-    <!-- DATA GRAPH -->
-
     <div class="graph-area">
 
         <div class="growth-card">
-
-            <small>
-                Insights Growth
-            </small>
-
-            <strong>
-                +45%
-            </strong>
-
+            <small>Insights Growth</small>
+            <strong>+45%</strong>
         </div>
-
 
         <div class="graph">
 
             <div class="bars">
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
             </div>
-
 
             <div class="line">
 
-                <svg
-                    viewBox="0 0 700 300"
-                >
+                <svg viewBox="0 0 700 300">
 
                     <path d="
                         M0,235
@@ -1117,63 +798,16 @@ footer {
                         L500,65
                         L600,115
                         L700,30
-                    " />
+                    "/>
 
-                    <circle
-                        class="dot"
-                        cx="0"
-                        cy="235"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="100"
-                        cy="170"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="200"
-                        cy="180"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="300"
-                        cy="95"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="400"
-                        cy="135"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="500"
-                        cy="65"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="600"
-                        cy="115"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="700"
-                        cy="30"
-                        r="7"
-                    />
+                    <circle class="dot" cx="0" cy="235" r="7"/>
+                    <circle class="dot" cx="100" cy="170" r="7"/>
+                    <circle class="dot" cx="200" cy="180" r="7"/>
+                    <circle class="dot" cx="300" cy="95" r="7"/>
+                    <circle class="dot" cx="400" cy="135" r="7"/>
+                    <circle class="dot" cx="500" cy="65" r="7"/>
+                    <circle class="dot" cx="600" cy="115" r="7"/>
+                    <circle class="dot" cx="700" cy="30" r="7"/>
 
                 </svg>
 
@@ -1190,65 +824,50 @@ footer {
      ABOUT
 ========================= -->
 
-<section
-    class="about"
-    id="about"
->
+<section class="about" id="about">
 
     <div class="about-grid">
-
 
         <div>
 
             <div class="section-label">
-
                 ABOUT US
-
             </div>
 
-
             <h2>
-
                 Data.<br>
                 Insight.<br>
                 Impact.
-
             </h2>
 
-
             <p class="about-text">
-
-                At Poll, we believe that
-                accurate insights build
-                stronger strategies.
-
-                Our data-driven solutions
-                help you understand the
-                true picture and make
-                confident decisions for a
-                better tomorrow.
-
+                At Poll, we believe that accurate insights build
+                stronger strategies. Our data-driven approach helps
+                transform raw numbers into meaningful information
+                that people can understand and act upon.
             </p>
+
+            <div class="crunch-line">
+                <span>OUR PHILOSOPHY</span>
+                <strong>
+                    WE CRUNCH THE NUMBERS.<br>
+                    THAT'S WHAT WE ARE KNOWN FOR.
+                </strong>
+            </div>
 
         </div>
 
 
         <div class="cards">
 
-
             <div class="card">
 
-                <div class="card-icon">
-                    ◎
-                </div>
+                <div class="card-icon">◎</div>
 
-                <h3>
-                    ACCURATE
-                </h3>
+                <h3>ACCURATE</h3>
 
                 <p>
-                    Precision in every
-                    data point.
+                    Precision in every data point.
                 </p>
 
             </div>
@@ -1256,17 +875,12 @@ footer {
 
             <div class="card">
 
-                <div class="card-icon">
-                    ↗
-                </div>
+                <div class="card-icon">↗</div>
 
-                <h3>
-                    INSIGHTFUL
-                </h3>
+                <h3>INSIGHTFUL</h3>
 
                 <p>
-                    Turning data into
-                    actionable insights.
+                    Turning data into actionable insights.
                 </p>
 
             </div>
@@ -1274,21 +888,15 @@ footer {
 
             <div class="card">
 
-                <div class="card-icon">
-                    ✦
-                </div>
+                <div class="card-icon">✦</div>
 
-                <h3>
-                    IMPACTFUL
-                </h3>
+                <h3>IMPACTFUL</h3>
 
                 <p>
-                    Driving growth and
-                    smarter decisions.
+                    Helping people understand the bigger picture.
                 </p>
 
             </div>
-
 
         </div>
 
@@ -1298,103 +906,47 @@ footer {
 
 
 <!-- =========================
-     INSIGHTS / GENRES
+     INSIGHTS
 ========================= -->
 
-<section
-    class="insights"
-    id="insights"
->
+<section class="insights" id="insights">
 
     <div class="section-label">
-
-        OUR INSIGHTS
-
+        POLL RESULTS
     </div>
 
+    <h2>Accurate Insights</h2>
 
-    <h2>
-
-        Explore Our Genres
-
-    </h2>
-
-
-    <p class="insights-intro">
-
-        Explore accurate insights
-        and data across the areas
-        that matter most.
-
+    <p class="insights-description">
+        Here's what the numbers say. Explore the latest POLL
+        results across sports and video games. Click a section
+        of a chart to learn more.
     </p>
 
 
-    <div class="genre-grid">
+    <div class="charts-container">
 
 
         <!-- SPORTS -->
 
-        <div class="genre-card">
-
-            <div class="genre-icon">
-                🏆
-            </div>
+        <div class="chart-card" id="sports-results">
 
             <h3>
-                SPORTS
+                <a href="#sports-results" class="chart-title-link">
+                    🏆 Sports
+                </a>
             </h3>
 
-            <p>
-
-                Data, trends and insights
-                from the world of sports.
-
+            <p class="total-votes">
+                95 total votes
             </p>
 
-        </div>
-
-
-        <!-- AUTOMOBILES -->
-
-        <div class="genre-card">
-
-            <div class="genre-icon">
-                🚗
+            <div class="chart-wrapper">
+                <canvas id="sportsChart"></canvas>
             </div>
 
-            <h3>
-                AUTOMOBILES
-            </h3>
-
-            <p>
-
-                Insights into vehicles,
-                automotive trends and
-                the industry.
-
-            </p>
-
-        </div>
-
-
-        <!-- POLITICS -->
-
-        <div class="genre-card">
-
-            <div class="genre-icon">
-                ◉
-            </div>
-
-            <h3>
-                POLITICS
-            </h3>
-
-            <p>
-
-                Data-driven perspectives
-                on political trends and
-                public opinion.
-
+            <p class="click-note">
+                Click a section to explore that sport.
             </p>
 
         </div>
@@ -1402,26 +954,27 @@ footer {
 
         <!-- VIDEO GAMES -->
 
-        <div class="genre-card">
-
-            <div class="genre-icon">
-                🎮
-            </div>
+        <div class="chart-card" id="games-results">
 
             <h3>
-                VIDEO GAMES
+                <a href="#games-results" class="chart-title-link">
+                    🎮 Video Games
+                </a>
             </h3>
 
-            <p>
+            <p class="total-votes">
+                13 total votes
+            </p>
 
-                Trends, audiences and
-                insights from the
-                gaming industry.
+            <div class="chart-wrapper">
+                <canvas id="gamesChart"></canvas>
+            </div>
 
+            <p class="click-note">
+                Click a section to explore that game.
             </p>
 
         </div>
-
 
     </div>
 
@@ -1432,38 +985,25 @@ footer {
      LEADERSHIP
 ========================= -->
 
-<section
-    class="leadership"
-    id="leadership"
->
+<section class="leadership" id="leadership">
 
     <div class="section-label">
-
         OUR LEADERSHIP
-
     </div>
 
-
     <h2>
-
         Guiding Poll<br>
         Towards Excellence
-
     </h2>
 
 
     <div class="leaders">
 
-
-        <!-- CEO -->
-
         <div class="leader">
 
             <div class="profile"></div>
 
-            <h3>
-                CEO
-            </h3>
+            <h3>CEO</h3>
 
             <div class="blank-name">
                 —
@@ -1472,15 +1012,11 @@ footer {
         </div>
 
 
-        <!-- CHAIRMAN -->
-
         <div class="leader">
 
             <div class="profile"></div>
 
-            <h3>
-                CHAIRMAN
-            </h3>
+            <h3>CHAIRMAN</h3>
 
             <div class="blank-name">
                 —
@@ -1489,24 +1025,17 @@ footer {
         </div>
 
 
-        <!-- VICE CHAIRMAN -->
-
         <div class="leader">
 
             <div class="profile"></div>
 
-            <h3>
-                VICE CHAIRMAN
-            </h3>
+            <h3>VICE CEO</h3>
 
             <div class="blank-name">
-
-                Arnav Kaivar
-
+                —
             </div>
 
         </div>
-
 
     </div>
 
@@ -1517,29 +1046,31 @@ footer {
      CONTACT
 ========================= -->
 
-<section
-    class="contact"
-    id="contact"
->
+<section class="contact" id="contact">
 
     <div class="contact-box">
 
-        <h2>
+        <div>
 
-            Ready to uncover
-            accurate insights
-            that drive real results?
+            <h2>
+                Ready to uncover accurate insights
+                that drive real results?
+            </h2>
 
-        </h2>
+            <a
+                class="contact-email"
+                href="mailto:apkyoda@gmail.com"
+            >
+                apkyoda@gmail.com
+            </a>
 
+        </div>
 
         <a
-            href="mailto:contact@poll.com"
+            href="mailto:apkyoda@gmail.com?subject=POLL%20Inquiry"
             class="contact-button"
         >
-
             GET IN TOUCH →
-
         </a>
 
     </div>
@@ -1554,22 +1085,306 @@ footer {
 <footer>
 
     <div>
-
-        © 2026 POLL.
-        All rights reserved.
-
+        © 2026 POLL. All rights reserved.
     </div>
 
-
     <div>
-
-        The blueprint of
-        accurate insights.
-
+        The blueprint of accurate insights.
     </div>
 
 </footer>
 
+
+<!-- =========================
+     CHART JAVASCRIPT
+========================= -->
+
+<script>
+
+/* =========================
+   SPORTS DATA
+========================= */
+
+const sportsLabels = [
+    "Volleyball",
+    "Handball",
+    "Badminton",
+    "Swimming",
+    "Athletics",
+    "Squash",
+    "Karatee",
+    "Gymnastics",
+    "Kho-Kho",
+    "Tennis",
+    "Sumo",
+    "Cricket",
+    "Football",
+    "Chess",
+    "Table Tennis",
+    "Basket Ball"
+];
+
+const sportsVotes = [
+    4,
+    4,
+    17,
+    5,
+    2,
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    11,
+    17,
+    5,
+    7,
+    13
+];
+
+
+/* =========================
+   VIDEO GAME DATA
+========================= */
+
+const gameLabels = [
+    "Minecraft",
+    "Blox Fruits",
+    "Barry's Prison Run",
+    "GTA 6",
+    "FC Mobile",
+    "Piggy",
+    "GTA 5"
+];
+
+const gameVotes = [
+    2,
+    2,
+    2,
+    2,
+    2,
+    1,
+    2
+];
+
+
+/* =========================
+   CHART COLORS
+========================= */
+
+const chartColors = [
+    "#176CFF",
+    "#2F80ED",
+    "#56CCF2",
+    "#27AE60",
+    "#6FCF97",
+    "#F2C94C",
+    "#F2994A",
+    "#EB5757",
+    "#BB6BD9",
+    "#9B51E0",
+    "#2D9CDB",
+    "#00A8A8",
+    "#173DCE",
+    "#5B7CFA",
+    "#4CAF50",
+    "#FF8A65"
+];
+
+
+/* =========================
+   SPORTS PIE CHART
+========================= */
+
+new Chart(
+    document.getElementById("sportsChart"),
+    {
+        type: "pie",
+
+        data: {
+            labels: sportsLabels,
+
+            datasets: [{
+                data: sportsVotes,
+
+                backgroundColor: chartColors,
+
+                borderColor: "#ffffff",
+
+                borderWidth: 3
+            }]
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            onClick: function(event, elements) {
+
+                if (elements.length > 0) {
+
+                    const index = elements[0].index;
+
+                    const sport = sportsLabels[index];
+
+                    const searchURL =
+                        "https://www.google.com/search?q=" +
+                        encodeURIComponent(
+                            sport + " sport"
+                        );
+
+                    window.open(
+                        searchURL,
+                        "_blank"
+                    );
+                }
+            },
+
+            plugins: {
+
+                legend: {
+
+                    position: "right",
+
+                    labels: {
+                        padding: 12,
+
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+
+                tooltip: {
+
+                    callbacks: {
+
+                        label: function(context) {
+
+                            const votes = context.raw;
+
+                            const total = 95;
+
+                            const percentage =
+                                (
+                                    votes / total * 100
+                                ).toFixed(1);
+
+                            return (
+                                " " +
+                                votes +
+                                " votes (" +
+                                percentage +
+                                "%)"
+                            );
+                        }
+                    }
+                }
+            }
+        }
+    }
+);
+
+
+/* =========================
+   VIDEO GAME PIE CHART
+========================= */
+
+new Chart(
+    document.getElementById("gamesChart"),
+    {
+        type: "pie",
+
+        data: {
+
+            labels: gameLabels,
+
+            datasets: [{
+
+                data: gameVotes,
+
+                backgroundColor: chartColors.slice(0, 7),
+
+                borderColor: "#ffffff",
+
+                borderWidth: 3
+            }]
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            onClick: function(event, elements) {
+
+                if (elements.length > 0) {
+
+                    const index = elements[0].index;
+
+                    const game = gameLabels[index];
+
+                    const searchURL =
+                        "https://www.google.com/search?q=" +
+                        encodeURIComponent(game);
+
+                    window.open(
+                        searchURL,
+                        "_blank"
+                    );
+                }
+            },
+
+            plugins: {
+
+                legend: {
+
+                    position: "right",
+
+                    labels: {
+                        padding: 15,
+
+                        font: {
+                            size: 13
+                        }
+                    }
+                },
+
+                tooltip: {
+
+                    callbacks: {
+
+                        label: function(context) {
+
+                            const votes = context.raw;
+
+                            const total = 13;
+
+                            const percentage =
+                                (
+                                    votes / total * 100
+                                ).toFixed(1);
+
+                            return (
+                                " " +
+                                votes +
+                                " votes (" +
+                                percentage +
+                                "%)"
+                            );
+                        }
+                    }
+                }
+            }
+        }
+    }
+);
+
+</script>
 
 </body>
 </html>
