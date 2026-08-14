@@ -10,6 +10,10 @@
 
 <style>
 
+/* =========================
+   GENERAL
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -23,313 +27,270 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
-    color: #071a45;
+    color: #081c4d;
 }
 
-/* =========================================
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
    NAVIGATION
-========================================= */
+========================= */
 
 nav {
-    height: 90px;
+    height: 85px;
+    padding: 0 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 6%;
-    background: rgba(255,255,255,0.97);
-    border-bottom: 1px solid #e8eef8;
+
+    background: rgba(255,255,255,0.96);
+
+    border-bottom: 1px solid #e5ebf4;
+
     position: sticky;
     top: 0;
     z-index: 1000;
+
     backdrop-filter: blur(12px);
 }
 
 .logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 3px;
+
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 32px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: #081c4d;
+    gap: 10px;
 }
 
-.logo-icon {
+.logo-bars {
     display: flex;
     align-items: flex-end;
     gap: 4px;
-    height: 35px;
+    height: 30px;
 }
 
-.logo-icon span {
-    width: 7px;
-    background: linear-gradient(180deg, #176cff, #173dce);
+.logo-bars span {
+    width: 6px;
     border-radius: 3px;
+    background: #176cff;
 }
 
-.logo-icon span:nth-child(1) {
-    height: 15px;
+.logo-bars span:nth-child(1) {
+    height: 13px;
 }
 
-.logo-icon span:nth-child(2) {
-    height: 24px;
+.logo-bars span:nth-child(2) {
+    height: 21px;
 }
 
-.logo-icon span:nth-child(3) {
-    height: 34px;
+.logo-bars span:nth-child(3) {
+    height: 30px;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 28px;
+    list-style: none;
 }
 
-nav a {
-    text-decoration: none;
-    color: #071a45;
+nav ul li a {
+    color: #081c4d;
     font-size: 13px;
     font-weight: 800;
-    transition: 0.3s;
 }
 
-nav a:hover {
+nav ul li a:hover {
     color: #176cff;
 }
 
-/* =========================================
+
+/* =========================
    HERO
-========================================= */
+========================= */
 
 .hero {
     min-height: 650px;
+    padding: 90px 6%;
+
     display: flex;
     align-items: center;
-    padding: 80px 6%;
-    position: relative;
-    overflow: hidden;
 
     background:
         radial-gradient(
             circle at 85% 25%,
-            rgba(42,111,255,0.14),
+            rgba(23,108,255,0.14),
             transparent 30%
         ),
         linear-gradient(
             135deg,
-            #ffffff 0%,
-            #f6f9ff 100%
+            #ffffff,
+            #f5f8ff
         );
 }
 
 .hero-content {
-    width: 50%;
-    z-index: 2;
+    width: 52%;
 }
 
 .hero h1 {
-    font-size: clamp(75px, 10vw, 135px);
-    line-height: 0.85;
-    letter-spacing: -6px;
+    font-size: clamp(80px, 11vw, 140px);
+    line-height: .85;
+    letter-spacing: -7px;
     margin-bottom: 30px;
-    color: #081c4d;
 }
 
 .tagline {
-    color: #1763ef;
-    font-size: clamp(22px, 3vw, 35px);
-    font-weight: 500;
-    margin-bottom: 25px;
+    color: #176cff;
+    font-size: 30px;
     line-height: 1.25;
+    margin-bottom: 25px;
 }
 
 .hero-description {
-    max-width: 620px;
+    max-width: 650px;
+    color: #59677e;
     font-size: 18px;
     line-height: 1.8;
-    color: #53617a;
-    margin-bottom: 25px;
 }
 
-.crunch-hero {
-    color: #081c4d;
-    font-size: 17px;
+.crunch {
+    margin: 30px 0;
+    font-size: 16px;
     font-weight: 900;
     letter-spacing: 1px;
-    margin-bottom: 35px;
 }
 
 .button {
     display: inline-block;
     padding: 17px 30px;
+
     background: linear-gradient(
         135deg,
         #102b70,
         #176cff
     );
+
     color: white;
-    text-decoration: none;
-    border-radius: 15px;
+
+    border-radius: 14px;
+
     font-weight: 800;
+
     box-shadow:
         0 15px 35px
-        rgba(23,108,255,0.22);
-    transition: 0.3s;
+        rgba(23,108,255,.2);
+
+    transition: .3s;
 }
 
 .button:hover {
     transform: translateY(-4px);
-    box-shadow:
-        0 20px 45px
-        rgba(23,108,255,0.32);
 }
 
-/* =========================================
+
+/* =========================
    HERO GRAPH
-========================================= */
+========================= */
 
-.graph-area {
-    width: 50%;
-    height: 440px;
-    position: relative;
+.hero-graphic {
+    width: 48%;
+    height: 380px;
+
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
+    position: relative;
 }
 
-.graph {
+.fake-graph {
     width: 90%;
-    height: 340px;
-    position: relative;
-    border-left: 2px solid #dbe5f5;
-    border-bottom: 2px solid #dbe5f5;
+    height: 300px;
+
+    border-left: 2px solid #d8e2f2;
+    border-bottom: 2px solid #d8e2f2;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
 
     background:
         repeating-linear-gradient(
             to top,
             transparent 0,
-            transparent 66px,
-            #e5ebf6 67px
+            transparent 59px,
+            #e7edf7 60px
         );
 }
 
-.bars {
-    position: absolute;
-    bottom: 0;
-    left: 7%;
-    right: 7%;
-    height: 90%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-}
-
-.bar {
-    width: 12%;
-    border-radius: 8px 8px 0 0;
+.fake-bar {
+    width: 10%;
+    border-radius: 7px 7px 0 0;
 
     background:
         linear-gradient(
             to top,
-            #1262dc,
-            #5bb7ff
+            #176cff,
+            #71b9ff
         );
-
-    box-shadow:
-        0 15px 25px
-        rgba(27,104,220,0.18);
-
-    animation: rise 1.2s ease-out;
 }
 
-.bar:nth-child(1) { height: 25%; }
-.bar:nth-child(2) { height: 38%; }
-.bar:nth-child(3) { height: 34%; }
-.bar:nth-child(4) { height: 55%; }
-.bar:nth-child(5) { height: 48%; }
-.bar:nth-child(6) { height: 68%; }
-.bar:nth-child(7) { height: 85%; }
+.fake-bar:nth-child(1) { height: 25%; }
+.fake-bar:nth-child(2) { height: 40%; }
+.fake-bar:nth-child(3) { height: 34%; }
+.fake-bar:nth-child(4) { height: 58%; }
+.fake-bar:nth-child(5) { height: 50%; }
+.fake-bar:nth-child(6) { height: 73%; }
+.fake-bar:nth-child(7) { height: 88%; }
 
-@keyframes rise {
-
-    from {
-        height: 0;
-    }
-
-}
-
-.line {
+.growth {
     position: absolute;
-    left: 5%;
-    right: 3%;
-    top: 10%;
-    height: 80%;
-    pointer-events: none;
-}
+    top: 15px;
+    right: 0;
 
-.line svg {
-    width: 100%;
-    height: 100%;
-}
+    padding: 20px 25px;
 
-.line path {
-    fill: none;
-    stroke: #176cff;
-    stroke-width: 4;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
+    background: #edf5ff;
 
-.dot {
-    fill: white;
-    stroke: #176cff;
-    stroke-width: 3;
-}
+    border: 1px solid #dbe8fa;
 
-.growth-card {
-    position: absolute;
-    right: -5%;
-    top: -5%;
-    padding: 22px 28px;
-    background: rgba(239,246,255,0.95);
-    border: 1px solid #dce8fb;
     border-radius: 18px;
 
     box-shadow:
-        0 20px 50px
-        rgba(17,64,130,0.12);
-
-    z-index: 2;
+        0 20px 45px
+        rgba(20,60,120,.1);
 }
 
-.growth-card small {
-    color: #4e5e7c;
+.growth small {
     display: block;
-    margin-bottom: 5px;
+    color: #65728a;
 }
 
-.growth-card strong {
-    font-size: 28px;
+.growth strong {
+    display: block;
     color: #176cff;
+    font-size: 28px;
+    margin-top: 5px;
 }
 
-/* =========================================
+
+/* =========================
    ABOUT
-========================================= */
+========================= */
 
 .about {
     padding: 110px 6%;
 
     background:
-        radial-gradient(
-            circle at 80% 20%,
-            rgba(38,102,255,0.15),
-            transparent 30%
-        ),
         linear-gradient(
             135deg,
             #061637,
-            #0b2454
+            #0b285c
         );
 
     color: white;
@@ -339,12 +300,11 @@ nav a:hover {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 60px;
-    align-items: center;
 }
 
-.section-label {
-    color: #2e76ff;
-    font-size: 14px;
+.label {
+    color: #4e91ff;
+    font-size: 13px;
     font-weight: 900;
     letter-spacing: 2px;
     margin-bottom: 20px;
@@ -352,381 +312,291 @@ nav a:hover {
 
 .about h2 {
     font-size: 55px;
-    line-height: 1.02;
+    line-height: 1;
     margin-bottom: 25px;
 }
 
-.about-text {
-    color: #c8d5eb;
+.about p {
+    color: #c7d4e9;
     line-height: 1.8;
     font-size: 17px;
 }
 
-.crunch-line {
-    margin-top: 40px;
+.crunch-box {
+    margin-top: 35px;
     padding: 25px;
+
     border-left: 4px solid #176cff;
-    background: rgba(255,255,255,0.05);
+
+    background: rgba(255,255,255,.05);
+
     border-radius: 0 15px 15px 0;
 }
 
-.crunch-line span {
-    display: block;
-    color: #79b4ff;
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
+.crunch-box strong {
+    font-size: 20px;
 }
 
-.crunch-line strong {
-    font-size: 22px;
-    line-height: 1.4;
-}
-
-.cards {
+.about-cards {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
-.card {
-    padding: 35px 25px;
-    min-height: 270px;
+.about-card {
+    padding: 30px;
+    min-height: 240px;
 
-    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,.05);
 
-    background:
-        rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,.1);
 
     border-radius: 20px;
-    transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    background:
-        rgba(255,255,255,0.08);
+.about-card .icon {
+    font-size: 40px;
+    margin-bottom: 30px;
 }
 
-.card-icon {
-    font-size: 42px;
-    margin-bottom: 35px;
+.about-card h3 {
+    margin-bottom: 12px;
 }
 
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
+.about-card p {
+    font-size: 14px;
 }
 
-.card p {
-    color: #b9c8df;
-    line-height: 1.6;
-}
 
-/* =========================================
+/* =========================
    GENRES
-========================================= */
+========================= */
 
 .genres {
     padding: 110px 6%;
-    background: #ffffff;
 }
 
 .genres h2 {
-    font-size: 50px;
-    color: #081c4d;
+    font-size: 52px;
     margin-bottom: 15px;
 }
 
-.genres-description {
-    max-width: 700px;
+.genres-intro {
+    max-width: 720px;
     color: #65728a;
     line-height: 1.7;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .genre-grid {
     display: grid;
-    grid-template-columns:
-        repeat(5,1fr);
-    gap: 18px;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
 }
 
-.genre-card {
-    min-height: 190px;
-    padding: 28px 20px;
+.genre {
+    min-height: 230px;
 
-    border: 1px solid #e2e9f4;
-    border-radius: 20px;
+    padding: 30px;
+
+    border: 1px solid #e0e8f3;
+
+    border-radius: 22px;
+
+    color: #081c4d;
 
     background: white;
 
-    text-decoration: none;
-    color: #081c4d;
-
     box-shadow:
-        0 15px 40px
-        rgba(20,50,100,0.06);
+        0 15px 45px
+        rgba(20,50,100,.06);
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
-.genre-card:hover {
+.genre:hover {
     transform: translateY(-8px);
 
     border-color: #176cff;
 
     box-shadow:
         0 20px 50px
-        rgba(23,108,255,0.14);
+        rgba(23,108,255,.14);
 }
 
 .genre-icon {
-    font-size: 42px;
-    margin-bottom: 22px;
-}
-
-.genre-card h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.genre-card p {
-    color: #7a879b;
-    font-size: 13px;
-    line-height: 1.5;
-}
-
-/* =========================================
-   INSIGHTS
-========================================= */
-
-.insights {
-    padding: 110px 6%;
-
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(40,110,255,0.08),
-            transparent 25%
-        ),
-        #f7faff;
-}
-
-.insights h2 {
-    font-size: 52px;
-    color: #081c4d;
-    margin-bottom: 15px;
-}
-
-.insights-description {
-    color: #65728a;
-    font-size: 17px;
-    line-height: 1.7;
-    max-width: 750px;
-    margin-bottom: 50px;
-}
-
-.charts-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.chart-card {
-    background: white;
-    border: 1px solid #e1e8f3;
-    border-radius: 25px;
-    padding: 35px;
-
-    box-shadow:
-        0 20px 50px
-        rgba(20,50,100,0.08);
-
-    text-align: center;
-}
-
-.chart-card h3 {
-    font-size: 28px;
-    color: #081c4d;
-    margin-bottom: 8px;
-}
-
-.chart-title-link {
-    color: #081c4d;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.chart-title-link:hover {
-    color: #176cff;
-}
-
-.total-votes {
-    color: #176cff;
-    font-weight: bold;
+    font-size: 45px;
     margin-bottom: 25px;
 }
 
-.chart-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    height: 430px;
-    margin: auto;
+.genre h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
 }
 
-.click-note {
-    margin-top: 20px;
-    color: #8b98aa;
-    font-size: 13px;
+.genre p {
+    color: #758197;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-/* =========================================
-   DATA TABLE
-========================================= */
+
+/* =========================
+   DATA SECTION
+========================= */
 
 .data-section {
-    padding: 100px 6%;
-    background: white;
+    padding: 110px 6%;
+
+    background: #f7faff;
 }
 
 .data-section h2 {
-    font-size: 45px;
-    color: #081c4d;
+    font-size: 50px;
     margin-bottom: 15px;
 }
 
-.data-description {
-    color: #68768c;
-    margin-bottom: 40px;
+.data-intro {
+    color: #65728a;
+    margin-bottom: 50px;
+    line-height: 1.7;
 }
 
-.table-container {
-    overflow-x: auto;
+
+/* =========================
+   DATA CATEGORY
+========================= */
+
+.data-category {
+    margin-bottom: 100px;
+    padding: 45px;
+
+    background: white;
+
+    border: 1px solid #e2e9f4;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(20,50,100,.07);
+}
+
+.data-category h3 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.category-total {
+    color: #176cff;
+    font-weight: 800;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   CHART
+========================= */
+
+.chart-area {
+    height: 500px;
+    position: relative;
+}
+
+.chart-note {
+    text-align: center;
+    color: #8a96a8;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   COMING SOON
+========================= */
+
+.coming-soon {
+    padding: 70px 30px;
+
+    text-align: center;
+
+    border: 2px dashed #d8e1ee;
 
     border-radius: 20px;
 
-    box-shadow:
-        0 15px 45px
-        rgba(20,50,100,0.07);
+    background: #fbfcff;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
+.coming-soon-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
 }
 
-thead {
-    background: #081c4d;
-    color: white;
+.coming-soon h4 {
+    font-size: 25px;
+    margin-bottom: 12px;
 }
 
-th,
-td {
-    padding: 17px 20px;
-    text-align: left;
-    border-bottom: 1px solid #edf1f7;
+.coming-soon p {
+    color: #758197;
+    line-height: 1.6;
 }
 
-th {
-    font-size: 13px;
-    letter-spacing: 1px;
-}
 
-td {
-    color: #4e5d75;
-}
-
-.data-link {
-    color: #176cff;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.data-link:hover {
-    text-decoration: underline;
-}
-
-.vote-number {
-    font-weight: 900;
-    color: #081c4d;
-}
-
-/* =========================================
+/* =========================
    LEADERSHIP
-========================================= */
+========================= */
 
 .leadership {
     padding: 110px 6%;
-
-    background:
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(33,106,255,0.1),
-            transparent 30%
-        ),
-        #ffffff;
 }
 
 .leadership h2 {
-    font-size: 48px;
-    margin-bottom: 55px;
-    line-height: 1.1;
+    font-size: 50px;
+    margin-bottom: 50px;
 }
 
-.leaders {
+.leader-grid {
     display: grid;
-    grid-template-columns:
-        repeat(3,1fr);
-    gap: 28px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
 }
 
 .leader {
-    min-height: 360px;
-    border: 1px solid #e3eaf5;
-    border-radius: 22px;
+    min-height: 350px;
+
     padding: 40px;
 
     text-align: center;
 
-    background:
-        rgba(255,255,255,0.9);
+    border: 1px solid #e1e8f3;
+
+    border-radius: 22px;
 
     box-shadow:
         0 20px 50px
-        rgba(22,55,100,0.07);
-
-    transition: 0.3s;
+        rgba(20,50,100,.06);
 }
 
-.leader:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 25px 60px
-        rgba(22,55,100,0.12);
-}
-
-.profile {
+.avatar {
     width: 130px;
     height: 130px;
+
     margin: 0 auto 30px;
+
     border-radius: 50%;
 
     background:
         linear-gradient(
             145deg,
             #edf2f8,
-            #d9e0eb
+            #d6deea
         );
 
     position: relative;
 }
 
-.profile::before {
+.avatar:before {
     content: "";
 
     position: absolute;
@@ -736,25 +606,23 @@ td {
 
     border-radius: 50%;
 
-    background: #aeb8c9;
+    background: #abb6c8;
 
-    top: 23px;
+    top: 22px;
     left: 44px;
 }
 
-.profile::after {
+.avatar:after {
     content: "";
 
     position: absolute;
 
     width: 75px;
-    height: 42px;
+    height: 43px;
 
-    border-radius:
-        50px 50px
-        20px 20px;
+    border-radius: 50px 50px 20px 20px;
 
-    background: #aeb8c9;
+    background: #abb6c8;
 
     bottom: 18px;
     left: 28px;
@@ -765,65 +633,60 @@ td {
     margin-bottom: 15px;
 }
 
-.blank-name {
-    color: #b9c0cb;
-    font-size: 18px;
-    letter-spacing: 4px;
+.leader-name {
+    color: #176cff;
+    font-size: 19px;
+    font-weight: 800;
 }
 
-/* =========================================
+.blank {
+    color: #b5bdc9;
+    font-size: 20px;
+}
+
+
+/* =========================
    CONTACT
-========================================= */
+========================= */
 
 .contact {
-    padding: 30px 6% 80px;
+    padding: 30px 6% 90px;
 }
 
 .contact-box {
-    min-height: 190px;
-    padding: 35px 50px;
+    padding: 45px;
 
-    border-radius: 24px;
+    border-radius: 25px;
+
+    color: white;
 
     background:
         linear-gradient(
             135deg,
             #09215a,
-            #123a94
+            #123c97
         );
-
-    color: white;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     gap: 30px;
-
-    box-shadow:
-        0 25px 60px
-        rgba(10,50,120,0.2);
 }
 
 .contact-box h2 {
-    font-size: 27px;
-    max-width: 600px;
+    font-size: 28px;
 }
 
-.contact-email {
-    color: #8fc3ff;
-    text-decoration: none;
+.email {
     display: block;
+    color: #8fc4ff;
     margin-top: 12px;
-    font-weight: 700;
-}
-
-.contact-email:hover {
-    text-decoration: underline;
+    font-weight: 800;
 }
 
 .contact-button {
-    padding: 16px 27px;
+    padding: 16px 28px;
 
     background: #176cff;
 
@@ -831,23 +694,15 @@ td {
 
     color: white;
 
-    text-decoration: none;
-
-    font-weight: bold;
+    font-weight: 800;
 
     white-space: nowrap;
-
-    transition: 0.3s;
 }
 
-.contact-button:hover {
-    transform: translateY(-3px);
-    background: #3280ff;
-}
 
-/* =========================================
+/* =========================
    FOOTER
-========================================= */
+========================= */
 
 footer {
     padding: 35px 6%;
@@ -857,31 +712,20 @@ footer {
     color: #91a3c3;
 
     display: flex;
-
     justify-content: space-between;
-
-    align-items: center;
 
     font-size: 14px;
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
 
-@media (max-width: 1100px) {
+/* =========================
+   MOBILE
+========================= */
 
-    .genre-grid {
-        grid-template-columns:
-            repeat(3,1fr);
-    }
-
-}
-
-@media (max-width: 950px) {
+@media(max-width: 950px) {
 
     nav ul {
-        gap: 15px;
+        gap: 12px;
     }
 
     .hero {
@@ -889,11 +733,11 @@ footer {
     }
 
     .hero-content,
-    .graph-area {
+    .hero-graphic {
         width: 100%;
     }
 
-    .graph-area {
+    .hero-graphic {
         margin-top: 60px;
     }
 
@@ -901,84 +745,62 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
+    .genre-grid {
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .charts-container {
-        grid-template-columns: 1fr;
-    }
-
-    .leaders {
+    .leader-grid {
         grid-template-columns: 1fr;
     }
 
 }
 
-@media (max-width: 650px) {
+@media(max-width: 650px) {
 
     nav {
-        height: 75px;
+        height: 70px;
     }
 
     nav ul {
         display: none;
     }
 
-    .logo {
-        font-size: 25px;
-    }
-
     .hero {
-        padding: 55px 6%;
+        padding: 60px 6%;
     }
 
     .hero h1 {
-        font-size: 75px;
+        font-size: 80px;
     }
 
     .tagline {
-        font-size: 24px;
-    }
-
-    .graph-area {
-        height: 330px;
-    }
-
-    .growth-card {
-        right: 0;
+        font-size: 23px;
     }
 
     .about,
     .genres,
-    .insights,
     .data-section,
     .leadership {
-        padding: 70px 6%;
+        padding: 75px 6%;
     }
 
-    .about h2,
-    .genres h2,
-    .insights h2,
-    .data-section h2,
-    .leadership h2 {
-        font-size: 38px;
+    .about-cards {
+        grid-template-columns: 1fr;
     }
 
     .genre-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 
-    .chart-card {
-        padding: 20px;
+    .data-category {
+        padding: 25px;
     }
 
-    .chart-wrapper {
-        height: 350px;
+    .chart-area {
+        height: 400px;
     }
 
     .contact-box {
-        padding: 30px;
         flex-direction: column;
         align-items: flex-start;
     }
@@ -986,7 +808,6 @@ footer {
     footer {
         flex-direction: column;
         gap: 10px;
-        text-align: center;
     }
 
 }
@@ -998,20 +819,18 @@ footer {
 <body>
 
 
-<!-- =========================================
+<!-- =========================
      NAVIGATION
-========================================= -->
+========================= -->
 
 <nav>
 
     <div class="logo">
 
-        <div class="logo-icon">
-
+        <div class="logo-bars">
             <span></span>
             <span></span>
             <span></span>
-
         </div>
 
         POLL
@@ -1022,39 +841,27 @@ footer {
     <ul>
 
         <li>
-            <a href="#home">
-                HOME
-            </a>
+            <a href="#home">HOME</a>
         </li>
 
         <li>
-            <a href="#about">
-                ABOUT
-            </a>
+            <a href="#about">ABOUT</a>
         </li>
 
         <li>
-            <a href="#genres">
-                GENRES
-            </a>
+            <a href="#genres">GENRES</a>
         </li>
 
         <li>
-            <a href="#insights">
-                INSIGHTS
-            </a>
+            <a href="#data">INSIGHTS</a>
         </li>
 
         <li>
-            <a href="#leadership">
-                LEADERSHIP
-            </a>
+            <a href="#leadership">LEADERSHIP</a>
         </li>
 
         <li>
-            <a href="mailto:apkyoda@gmail.com">
-                CONTACT
-            </a>
+            <a href="#contact">CONTACT</a>
         </li>
 
     </ul>
@@ -1062,17 +869,15 @@ footer {
 </nav>
 
 
-<!-- =========================================
+<!-- =========================
      HERO
-========================================= -->
+========================= -->
 
 <section class="hero" id="home">
 
     <div class="hero-content">
 
-        <h1>
-            POLL
-        </h1>
+        <h1>POLL</h1>
 
         <div class="tagline">
             The blueprint of accurate insights
@@ -1080,39 +885,34 @@ footer {
 
         <p class="hero-description">
 
-            We turn data into clarity.
+            We turn opinions, responses and
+            numbers into meaningful insights.
 
-            POLL transforms numbers,
-            opinions and responses into
-            meaningful insights that help
-            people understand what the
-            numbers are really saying.
+            POLL is built around one simple idea:
+            better data creates better understanding.
 
         </p>
 
-        <div class="crunch-hero">
+        <div class="crunch">
 
             WE CRUNCH THE NUMBERS.
             THAT'S WHAT WE ARE KNOWN FOR.
 
         </div>
 
-        <a
-            href="#insights"
-            class="button"
-        >
-            EXPLORE INSIGHTS →
+        <a href="#genres" class="button">
+            EXPLORE GENRES →
         </a>
 
     </div>
 
 
-    <div class="graph-area">
+    <div class="hero-graphic">
 
-        <div class="growth-card">
+        <div class="growth">
 
             <small>
-                Insights Growth
+                Data Insights
             </small>
 
             <strong>
@@ -1122,95 +922,15 @@ footer {
         </div>
 
 
-        <div class="graph">
+        <div class="fake-graph">
 
-            <div class="bars">
-
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-
-            </div>
-
-
-            <div class="line">
-
-                <svg viewBox="0 0 700 300">
-
-                    <path d="
-                        M0,235
-                        L100,170
-                        L200,180
-                        L300,95
-                        L400,135
-                        L500,65
-                        L600,115
-                        L700,30
-                    " />
-
-                    <circle
-                        class="dot"
-                        cx="0"
-                        cy="235"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="100"
-                        cy="170"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="200"
-                        cy="180"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="300"
-                        cy="95"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="400"
-                        cy="135"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="500"
-                        cy="65"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="600"
-                        cy="115"
-                        r="7"
-                    />
-
-                    <circle
-                        class="dot"
-                        cx="700"
-                        cy="30"
-                        r="7"
-                    />
-
-                </svg>
-
-            </div>
+            <div class="fake-bar"></div>
+            <div class="fake-bar"></div>
+            <div class="fake-bar"></div>
+            <div class="fake-bar"></div>
+            <div class="fake-bar"></div>
+            <div class="fake-bar"></div>
+            <div class="fake-bar"></div>
 
         </div>
 
@@ -1219,57 +939,44 @@ footer {
 </section>
 
 
-<!-- =========================================
+<!-- =========================
      ABOUT
-========================================= -->
+========================= -->
 
-<section
-    class="about"
-    id="about"
->
+<section class="about" id="about">
 
     <div class="about-grid">
 
-
         <div>
 
-            <div class="section-label">
+            <div class="label">
                 ABOUT POLL
             </div>
 
             <h2>
-
                 Data.<br>
                 Insight.<br>
                 Impact.
-
             </h2>
 
+            <p>
 
-            <p class="about-text">
+                POLL collects and presents
+                information in a clear,
+                understandable way.
 
-                At POLL, we believe that
-                accurate insights build
-                stronger decisions.
-
-                We collect, organize and
-                analyze information to reveal
-                what the numbers are saying.
+                From sports and gaming to
+                automobiles and politics,
+                our goal is to make numbers
+                easier to understand.
 
             </p>
 
-
-            <div class="crunch-line">
-
-                <span>
-                    OUR PHILOSOPHY
-                </span>
+            <div class="crunch-box">
 
                 <strong>
-
-                    WE CRUNCH THE NUMBERS.<br>
+                    WE CRUNCH THE NUMBERS.
                     THAT'S WHAT WE ARE KNOWN FOR.
-
                 </strong>
 
             </div>
@@ -1277,12 +984,11 @@ footer {
         </div>
 
 
-        <div class="cards">
+        <div class="about-cards">
 
+            <div class="about-card">
 
-            <div class="card">
-
-                <div class="card-icon">
+                <div class="icon">
                     ◎
                 </div>
 
@@ -1291,15 +997,16 @@ footer {
                 </h3>
 
                 <p>
-                    Precision in every data point.
+                    We focus on presenting
+                    the numbers clearly.
                 </p>
 
             </div>
 
 
-            <div class="card">
+            <div class="about-card">
 
-                <div class="card-icon">
+                <div class="icon">
                     ↗
                 </div>
 
@@ -1308,16 +1015,16 @@ footer {
                 </h3>
 
                 <p>
-                    Turning data into meaningful
-                    insights.
+                    We transform responses
+                    into understandable insights.
                 </p>
 
             </div>
 
 
-            <div class="card">
+            <div class="about-card">
 
-                <div class="card-icon">
+                <div class="icon">
                     ✦
                 </div>
 
@@ -1326,12 +1033,11 @@ footer {
                 </h3>
 
                 <p>
-                    Helping people understand
-                    the bigger picture.
+                    Data becomes useful when
+                    people can understand it.
                 </p>
 
             </div>
-
 
         </div>
 
@@ -1340,28 +1046,29 @@ footer {
 </section>
 
 
-<!-- =========================================
+<!-- =========================
      GENRES
-========================================= -->
+========================= -->
 
-<section
-    class="genres"
-    id="genres"
->
+<section class="genres" id="genres">
 
-    <div class="section-label">
-        EXPLORE POLL
+    <div class="label">
+        EXPLORE OUR DATA
     </div>
 
     <h2>
-        Our Insights
+        Genres
     </h2>
 
-    <p class="genres-description">
+    <p class="genres-intro">
 
-        Explore POLL across different
-        categories. Each category connects
-        you to its dedicated area of interest.
+        Choose a category below.
+
+        Sports and Video Games currently
+        contain the POLL data you've provided.
+
+        Automobiles and Politics are ready
+        for future POLL results.
 
     </p>
 
@@ -1371,10 +1078,7 @@ footer {
 
         <!-- SPORTS -->
 
-        <a
-            class="genre-card"
-            href="#sports-results"
-        >
+        <a href="#sports" class="genre">
 
             <div class="genre-icon">
                 🏆
@@ -1385,8 +1089,9 @@ footer {
             </h3>
 
             <p>
-                Explore sports preferences,
-                voting patterns and results.
+                95 votes across 16 sports.
+                Click to view the complete
+                POLL results and pie chart.
             </p>
 
         </a>
@@ -1394,10 +1099,7 @@ footer {
 
         <!-- VIDEO GAMES -->
 
-        <a
-            class="genre-card"
-            href="#games-results"
-        >
+        <a href="#video-games" class="genre">
 
             <div class="genre-icon">
                 🎮
@@ -1408,8 +1110,9 @@ footer {
             </h3>
 
             <p>
-                Explore gaming preferences
-                and player choices.
+                13 votes across 7 games.
+                Click to view the complete
+                POLL results and pie chart.
             </p>
 
         </a>
@@ -1417,12 +1120,7 @@ footer {
 
         <!-- AUTOMOBILES -->
 
-        <a
-            class="genre-card"
-            href="https://www.google.com/search?q=automobile+polls+and+statistics"
-            target="_blank"
-            rel="noopener"
-        >
+        <a href="#automobiles" class="genre">
 
             <div class="genre-icon">
                 🚗
@@ -1433,8 +1131,8 @@ footer {
             </h3>
 
             <p>
-                Explore automobile trends,
-                preferences and data.
+                Automobile polling and
+                statistics will appear here.
             </p>
 
         </a>
@@ -1442,12 +1140,7 @@ footer {
 
         <!-- POLITICS -->
 
-        <a
-            class="genre-card"
-            href="https://www.google.com/search?q=political+polls+and+statistics"
-            target="_blank"
-            rel="noopener"
-        >
+        <a href="#politics" class="genre">
 
             <div class="genre-icon">
                 🏛️
@@ -1458,267 +1151,214 @@ footer {
             </h3>
 
             <p>
-                Explore public opinion,
-                polling and political data.
+                Political polling and
+                public opinion data will
+                appear here.
             </p>
 
         </a>
 
 
-        <!-- FUTURE -->
+    </div>
 
-        <a
-            class="genre-card"
-            href="https://www.google.com/search?q=future+technology+trends+statistics"
-            target="_blank"
-            rel="noopener"
-        >
+</section>
 
-            <div class="genre-icon">
-                🔮
+
+<!-- =========================
+     DATA
+========================= -->
+
+<section class="data-section" id="data">
+
+    <div class="label">
+        POLL INSIGHTS
+    </div>
+
+    <h2>
+        The Data
+    </h2>
+
+    <p class="data-intro">
+
+        Select a genre to explore the
+        available POLL results.
+
+    </p>
+
+
+    <!-- =========================
+         SPORTS
+    ========================= -->
+
+    <div class="data-category" id="sports">
+
+        <h3>
+            🏆 Sports
+        </h3>
+
+        <div class="category-total">
+            95 TOTAL VOTES
+        </div>
+
+
+        <div class="chart-area">
+
+            <canvas id="sportsChart"></canvas>
+
+        </div>
+
+
+        <p class="chart-note">
+
+            Click a section of the pie chart
+            or a legend item to explore
+            that sport.
+
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         VIDEO GAMES
+    ========================= -->
+
+    <div class="data-category" id="video-games">
+
+        <h3>
+            🎮 Video Games
+        </h3>
+
+        <div class="category-total">
+            13 TOTAL VOTES
+        </div>
+
+
+        <div class="chart-area">
+
+            <canvas id="gamesChart"></canvas>
+
+        </div>
+
+
+        <p class="chart-note">
+
+            Click a section of the pie chart
+            or a legend item to explore
+            that game.
+
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         AUTOMOBILES
+    ========================= -->
+
+    <div class="data-category" id="automobiles">
+
+        <h3>
+            🚗 Automobiles
+        </h3>
+
+        <div class="category-total">
+            POLL DATA
+        </div>
+
+
+        <div class="coming-soon">
+
+            <div class="coming-soon-icon">
+                🚘
             </div>
 
-            <h3>
-                Future
-            </h3>
+            <h4>
+                Data Coming Soon
+            </h4>
 
             <p>
-                Explore emerging trends,
-                technology and tomorrow's data.
-            </p>
 
-        </a>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     INSIGHTS / CHARTS
-========================================= -->
-
-<section
-    class="insights"
-    id="insights"
->
-
-    <div class="section-label">
-        POLL RESULTS
-    </div>
-
-    <h2>
-        Accurate Insights
-    </h2>
-
-    <p class="insights-description">
-
-        Here's what the numbers say.
-
-        Explore the latest POLL results
-        across sports and video games.
-
-        Click any chart section or
-        legend item to explore that topic.
-
-    </p>
-
-
-    <div class="charts-container">
-
-
-        <!-- SPORTS CHART -->
-
-        <div
-            class="chart-card"
-            id="sports-results"
-        >
-
-            <h3>
-
-                <a
-                    href="#sports-results"
-                    class="chart-title-link"
-                >
-                    🏆 Sports
-                </a>
-
-            </h3>
-
-
-            <p class="total-votes">
-                95 total votes
-            </p>
-
-
-            <div class="chart-wrapper">
-
-                <canvas
-                    id="sportsChart"
-                ></canvas>
-
-            </div>
-
-
-            <p class="click-note">
-
-                Click any sport in the
-                chart or legend to explore it.
+                Automobile polling results
+                will be displayed here once
+                POLL collects the data.
 
             </p>
 
         </div>
 
-
-        <!-- VIDEO GAME CHART -->
-
-        <div
-            class="chart-card"
-            id="games-results"
-        >
-
-            <h3>
-
-                <a
-                    href="#games-results"
-                    class="chart-title-link"
-                >
-                    🎮 Video Games
-                </a>
-
-            </h3>
+    </div>
 
 
-            <p class="total-votes">
-                13 total votes
-            </p>
+    <!-- =========================
+         POLITICS
+    ========================= -->
+
+    <div class="data-category" id="politics">
+
+        <h3>
+            🏛️ Politics
+        </h3>
+
+        <div class="category-total">
+            POLL DATA
+        </div>
 
 
-            <div class="chart-wrapper">
+        <div class="coming-soon">
 
-                <canvas
-                    id="gamesChart"
-                ></canvas>
-
+            <div class="coming-soon-icon">
+                📊
             </div>
 
+            <h4>
+                Data Coming Soon
+            </h4>
 
-            <p class="click-note">
+            <p>
 
-                Click any game in the
-                chart or legend to explore it.
+                Political polling results
+                will be displayed here once
+                POLL collects the data.
 
             </p>
 
         </div>
 
-
     </div>
 
 </section>
 
 
-<!-- =========================================
-     DATA TABLE
-========================================= -->
-
-<section
-    class="data-section"
-    id="data"
->
-
-    <div class="section-label">
-        DATA BREAKDOWN
-    </div>
-
-    <h2>
-        The Numbers
-    </h2>
-
-    <p class="data-description">
-
-        Every result can be explored
-        individually.
-
-    </p>
-
-
-    <div class="table-container">
-
-        <table>
-
-            <thead>
-
-                <tr>
-
-                    <th>
-                        CATEGORY
-                    </th>
-
-                    <th>
-                        RESULT
-                    </th>
-
-                    <th>
-                        VOTES
-                    </th>
-
-                    <th>
-                        EXPLORE
-                    </th>
-
-                </tr>
-
-            </thead>
-
-
-            <tbody id="dataTable">
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
+<!-- =========================
      LEADERSHIP
-========================================= -->
+========================= -->
 
-<section
-    class="leadership"
-    id="leadership"
->
+<section class="leadership" id="leadership">
 
-    <div class="section-label">
-        OUR LEADERSHIP
+    <div class="label">
+        LEADERSHIP
     </div>
 
     <h2>
-
-        Guiding POLL<br>
-        Towards Excellence
-
+        The People Behind POLL
     </h2>
 
 
-    <div class="leaders">
+    <div class="leader-grid">
 
 
         <!-- CEO -->
 
         <div class="leader">
 
-            <div class="profile"></div>
+            <div class="avatar"></div>
 
             <h3>
                 CEO
             </h3>
 
-            <div class="blank-name">
+            <div class="blank">
                 —
             </div>
 
@@ -1729,31 +1369,31 @@ footer {
 
         <div class="leader">
 
-            <div class="profile"></div>
+            <div class="avatar"></div>
 
             <h3>
                 CHAIRMAN
             </h3>
 
-            <div class="blank-name">
+            <div class="blank">
                 —
             </div>
 
         </div>
 
 
-        <!-- VICE CEO -->
+        <!-- VICE CHAIRMAN -->
 
         <div class="leader">
 
-            <div class="profile"></div>
+            <div class="avatar"></div>
 
             <h3>
-                VICE CEO
+                VICE CHAIRMAN
             </h3>
 
-            <div class="blank-name">
-                —
+            <div class="leader-name">
+                ARNAV KAIVAR
             </div>
 
         </div>
@@ -1764,31 +1404,23 @@ footer {
 </section>
 
 
-<!-- =========================================
+<!-- =========================
      CONTACT
-========================================= -->
+========================= -->
 
-<section
-    class="contact"
-    id="contact"
->
+<section class="contact" id="contact">
 
     <div class="contact-box">
-
 
         <div>
 
             <h2>
-
-                Ready to uncover accurate
-                insights that drive real results?
-
+                Want to connect with POLL?
             </h2>
 
-
             <a
-                class="contact-email"
                 href="mailto:apkyoda@gmail.com"
+                class="email"
             >
                 apkyoda@gmail.com
             </a>
@@ -1800,50 +1432,36 @@ footer {
             href="mailto:apkyoda@gmail.com?subject=POLL%20Inquiry"
             class="contact-button"
         >
-
-            GET IN TOUCH →
-
+            CONTACT POLL →
         </a>
-
 
     </div>
 
 </section>
 
 
-<!-- =========================================
+<!-- =========================
      FOOTER
-========================================= -->
+========================= -->
 
 <footer>
 
     <div>
-
-        © 2026 POLL.
-        All rights reserved.
-
+        © 2026 POLL. All rights reserved.
     </div>
 
-
     <div>
-
         The blueprint of accurate insights.
-
     </div>
 
 </footer>
 
 
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-
 <script>
 
-
-/* =========================================
+/* =====================================
    SPORTS DATA
-========================================= */
+===================================== */
 
 const sportsLabels = [
 
@@ -1865,7 +1483,6 @@ const sportsLabels = [
     "Basket Ball"
 
 ];
-
 
 const sportsVotes = [
 
@@ -1889,9 +1506,9 @@ const sportsVotes = [
 ];
 
 
-/* =========================================
+/* =====================================
    VIDEO GAME DATA
-========================================= */
+===================================== */
 
 const gameLabels = [
 
@@ -1905,25 +1522,40 @@ const gameLabels = [
 
 ];
 
-
 const gameVotes = [
 
     2,
     2,
     2,
     2,
-    2,
+    1,
     1,
     2
 
 ];
 
 
-/* =========================================
-   COLORS
-========================================= */
+/*
+IMPORTANT:
+Your original data says:
 
-const chartColors = [
+Minecraft       2
+Blox Fruits     2
+Barry's Prison  2
+GTA-6           2
+FC Mobile       2
+Piggy           1
+GTA 5           2
+
+That adds to 13.
+*/
+
+
+/* =====================================
+   CHART COLORS
+===================================== */
+
+const colors = [
 
     "#176CFF",
     "#2F80ED",
@@ -1945,11 +1577,11 @@ const chartColors = [
 ];
 
 
-/* =========================================
-   GOOGLE SEARCH LINK
-========================================= */
+/* =====================================
+   SEARCH FUNCTION
+===================================== */
 
-function openSearch(topic) {
+function explore(topic) {
 
     const url =
         "https://www.google.com/search?q=" +
@@ -1963,20 +1595,17 @@ function openSearch(topic) {
 }
 
 
-/* =========================================
-   SPORTS CHART
-========================================= */
+/* =====================================
+   SPORTS PIE CHART
+===================================== */
 
 new Chart(
 
-    document.getElementById(
-        "sportsChart"
-    ),
+    document.getElementById("sportsChart"),
 
     {
 
         type: "pie",
-
 
         data: {
 
@@ -1988,11 +1617,9 @@ new Chart(
 
                     data: sportsVotes,
 
-                    backgroundColor:
-                        chartColors,
+                    backgroundColor: colors,
 
-                    borderColor:
-                        "#ffffff",
+                    borderColor: "#ffffff",
 
                     borderWidth: 3
 
@@ -2002,7 +1629,6 @@ new Chart(
 
         },
 
-
         options: {
 
             responsive: true,
@@ -2010,8 +1636,12 @@ new Chart(
             maintainAspectRatio: false,
 
 
-            onClick:
-            function(
+            /*
+             * Makes clicking a pie section
+             * open that specific sport.
+             */
+
+            onClick: function(
                 event,
                 elements
             ) {
@@ -2023,12 +1653,8 @@ new Chart(
                     const index =
                         elements[0].index;
 
-                    const sport =
-                        sportsLabels[index];
-
-                    openSearch(
-                        sport +
-                        " sport"
+                    explore(
+                        sportsLabels[index]
                     );
 
                 }
@@ -2042,15 +1668,23 @@ new Chart(
 
                     position: "right",
 
-                    labels: {
 
-                        padding: 12,
+                    /*
+                     * Makes clicking a legend
+                     * item open that sport.
+                     */
 
-                        font: {
+                    onClick: function(
+                        event,
+                        legendItem
+                    ) {
 
-                            size: 12
+                        const index =
+                            legendItem.index;
 
-                        }
+                        explore(
+                            sportsLabels[index]
+                        );
 
                     }
 
@@ -2061,24 +1695,20 @@ new Chart(
 
                     callbacks: {
 
-                        label:
-                        function(context) {
+                        label: function(context) {
 
                             const votes =
                                 context.raw;
 
-                            const total =
-                                95;
-
                             const percentage =
                                 (
-                                    votes /
-                                    total *
-                                    100
+                                    votes / 95
+                                * 100
                                 ).toFixed(1);
 
                             return (
-                                " " +
+                                context.label +
+                                ": " +
                                 votes +
                                 " votes (" +
                                 percentage +
@@ -2100,41 +1730,32 @@ new Chart(
 );
 
 
-/* =========================================
-   VIDEO GAME CHART
-========================================= */
+/* =====================================
+   VIDEO GAME PIE CHART
+===================================== */
 
 new Chart(
 
-    document.getElementById(
-        "gamesChart"
-    ),
+    document.getElementById("gamesChart"),
 
     {
 
         type: "pie",
 
-
         data: {
 
-            labels:
-                gameLabels,
+            labels: gameLabels,
 
             datasets: [
 
                 {
 
-                    data:
-                        gameVotes,
+                    data: gameVotes,
 
                     backgroundColor:
-                        chartColors.slice(
-                            0,
-                            7
-                        ),
+                        colors.slice(0,7),
 
-                    borderColor:
-                        "#ffffff",
+                    borderColor: "#ffffff",
 
                     borderWidth: 3
 
@@ -2144,7 +1765,6 @@ new Chart(
 
         },
 
-
         options: {
 
             responsive: true,
@@ -2152,8 +1772,11 @@ new Chart(
             maintainAspectRatio: false,
 
 
-            onClick:
-            function(
+            /*
+             * Clicking pie section
+             */
+
+            onClick: function(
                 event,
                 elements
             ) {
@@ -2165,11 +1788,8 @@ new Chart(
                     const index =
                         elements[0].index;
 
-                    const game =
-                        gameLabels[index];
-
-                    openSearch(
-                        game
+                    explore(
+                        gameLabels[index]
                     );
 
                 }
@@ -2183,15 +1803,22 @@ new Chart(
 
                     position: "right",
 
-                    labels: {
 
-                        padding: 15,
+                    /*
+                     * Clicking legend item
+                     */
 
-                        font: {
+                    onClick: function(
+                        event,
+                        legendItem
+                    ) {
 
-                            size: 13
+                        const index =
+                            legendItem.index;
 
-                        }
+                        explore(
+                            gameLabels[index]
+                        );
 
                     }
 
@@ -2202,24 +1829,20 @@ new Chart(
 
                     callbacks: {
 
-                        label:
-                        function(context) {
+                        label: function(context) {
 
                             const votes =
                                 context.raw;
 
-                            const total =
-                                13;
-
                             const percentage =
                                 (
-                                    votes /
-                                    total *
-                                    100
+                                    votes / 13
+                                * 100
                                 ).toFixed(1);
 
                             return (
-                                " " +
+                                context.label +
+                                ": " +
                                 votes +
                                 " votes (" +
                                 percentage +
@@ -2239,169 +1862,6 @@ new Chart(
     }
 
 );
-
-
-/* =========================================
-   CLICKABLE LEGENDS
-========================================= */
-
-document
-    .getElementById("sportsChart")
-    .addEventListener(
-        "click",
-        function() {}
-    );
-
-
-/* =========================================
-   DATA TABLE
-========================================= */
-
-const table =
-    document.getElementById(
-        "dataTable"
-    );
-
-
-/* Sports rows */
-
-for (
-    let i = 0;
-    i < sportsLabels.length;
-    i++
-) {
-
-    const row =
-        document.createElement(
-            "tr"
-        );
-
-
-    row.innerHTML = `
-
-        <td>
-            Sports
-        </td>
-
-        <td>
-
-            <a
-                class="data-link"
-                href="https://www.google.com/search?q=${encodeURIComponent(
-                    sportsLabels[i] + " sport"
-                )}"
-                target="_blank"
-                rel="noopener"
-            >
-
-                ${sportsLabels[i]}
-
-            </a>
-
-        </td>
-
-        <td class="vote-number">
-
-            ${sportsVotes[i]}
-
-        </td>
-
-        <td>
-
-            <a
-                class="data-link"
-                href="https://www.google.com/search?q=${encodeURIComponent(
-                    sportsLabels[i] + " sport"
-                )}"
-                target="_blank"
-                rel="noopener"
-            >
-
-                Explore →
-
-            </a>
-
-        </td>
-
-    `;
-
-
-    table.appendChild(
-        row
-    );
-
-}
-
-
-/* Video game rows */
-
-for (
-    let i = 0;
-    i < gameLabels.length;
-    i++
-) {
-
-    const row =
-        document.createElement(
-            "tr"
-        );
-
-
-    row.innerHTML = `
-
-        <td>
-            Video Games
-        </td>
-
-        <td>
-
-            <a
-                class="data-link"
-                href="https://www.google.com/search?q=${encodeURIComponent(
-                    gameLabels[i]
-                )}"
-                target="_blank"
-                rel="noopener"
-            >
-
-                ${gameLabels[i]}
-
-            </a>
-
-        </td>
-
-        <td class="vote-number">
-
-            ${gameVotes[i]}
-
-        </td>
-
-        <td>
-
-            <a
-                class="data-link"
-                href="https://www.google.com/search?q=${encodeURIComponent(
-                    gameLabels[i]
-                )}"
-                target="_blank"
-                rel="noopener"
-            >
-
-                Explore →
-
-            </a>
-
-        </td>
-
-    `;
-
-
-    table.appendChild(
-        row
-    );
-
-}
-
 
 </script>
 
